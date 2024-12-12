@@ -1,7 +1,13 @@
+import Hero from "@/components/LandingPage/Hero";
+import Feature from "@/components/LandingPage/Feature";
+import FAQSection from "@/components/LandingPage/FAQsection";
+
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-danger">My Next.js App</h1>
-    </main>
+    <>
+    <Hero />
+    <Feature />
+    <FAQSection />
+    </>  
   );
 }
