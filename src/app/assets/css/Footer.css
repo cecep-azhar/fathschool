@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Menjaga jarak antar elemen */
+    min-height: 100vh; /* Memastikan footer mengisi tinggi layar */
+    padding: 20px 0; /* Menambahkan padding atas dan bawah */
+  }
+  
+  .container {
+    flex: 1; /* Memastikan kontainer mengisi ruang yang tersedia */
+  }
+  
+  .progress-wrap {
+    position: relative;
+    height: 10px; /* Atur tinggi sesuai kebutuhan */
+    background: #f0f0f0; /* Warna latar belakang untuk progress */
+  }
+  

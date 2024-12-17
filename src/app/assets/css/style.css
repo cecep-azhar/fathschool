@@ -244,6 +244,11 @@ Author:		elemis
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
