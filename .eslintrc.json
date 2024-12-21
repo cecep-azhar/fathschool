@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:unicorn/recommended"],
+  "plugins": ["unicorn"],
+  "rules": {
+    "unicorn/better-regex": "off",
+    "no-unused-vars": "warn", // Menambahkan aturan untuk memperingatkan variabel yang tidak digunakan
+    "no-console": "off" // Menonaktifkan peringatan untuk console.log
+  }
 }

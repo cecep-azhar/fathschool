@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 export default function FAQSection({ props }) {
   const { faqs } = props;
@@ -15,7 +16,7 @@ export default function FAQSection({ props }) {
           <div className="col-xl-11 col-xxl-10 mx-auto">
             <div className="mt-lg-n20 mt-xl-n22 mb-14 mb-md-16 rounded-xl">
               <iframe
-                width="100%" // Mengatur lebar iframe agar responsif
+                width="100%"
                 height="391"
                 src="https://www.youtube.com/embed/KRtRogig5Vg"
                 title="Introduce FathSchool"
@@ -26,19 +27,23 @@ export default function FAQSection({ props }) {
               ></iframe>
             </div>
             <div className="position-relative">
-              <img
+              <Image
                 src="/assets/img/svg/doodle7.svg"
                 className="h-7 position-absolute d-none d-lg-block"
                 data-delay="1800"
                 style={{ top: "-90%", right: "-3%" }}
                 alt=""
+                width={100}
+                height={100}
               />
-              <img
+              <Image
                 src="/assets/img/svg/doodle8.svg"
                 className="h-14 position-absolute d-none d-lg-block"
                 data-delay="1800"
                 style={{ top: "-20%", left: "-12%" }}
                 alt=""
+                width={100}
+                height={100}
               />
               <h2 className="fs-16 text-uppercase text-muted mb-3 text-center">FAQ</h2>
               <h3 className="display-3 mb-11 px-lg-8 px-xl-11 text-center">

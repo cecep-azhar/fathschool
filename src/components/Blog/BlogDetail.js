@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import Image from 'next/image'; // Pastikan Anda mengimpor komponen Image
 
 const BlogDetail = ({ blog }) => {
   if (!blog) {
@@ -58,7 +59,7 @@ const BlogDetail = ({ blog }) => {
               <div className="blog single mt-n17">
                 <div className="card">
                   <figure className="card-img-top">
-                    <img src={`/assets/img/blog/${blog.image}`} alt={blog.title} />
+                    <Image src={`/assets/img/blog/${blog.image}`} alt={blog.title} width={800} height={500} />
                   </figure>
                   <div className="card-body">
                     <div className="classic-view">

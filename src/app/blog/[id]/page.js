@@ -24,37 +24,19 @@ const defaultBlogs = [
   }
 ];
 
-async function getData(api_url) {
-  const response = await fetch(api_url);
-  if (!response.ok) {
-    throw new Error(`Network response was not ok: ${response.statusText}`);
-  }
-  return response.json();
-}
-
-async function fetchBlogById(blogId) {
-  const apiUrl = `https://fathschool.com/blogs/${blogId}`; // Replace with your actual API URL
-  try {
-    const blog = await getData(apiUrl);
-    return blog;
-  } catch (error) {
-    console.error('Error fetching blog:', error);
-    return null; // Return null if there's an error
-  }
-}
-
-export default async function BlogDetailPage({ params }) {
-  const { id } = params; // Use params directly
-  const blogId = parseInt(id, 10);
+// Komponen utama untuk halaman detail blog
+export default function BlogDetailPage({ params }) {
+  const { id } = params; // Mengambil ID dari params
+  const blogId = parseInt(id, 10); // Mengonversi ID menjadi integer
 
   console.log("Received ID:", blogId);
 
-  const blog = await fetchBlogById(blogId);
-
-  const foundBlog = blog || defaultBlogs.find((b) => b.id === blogId);
+  // Mencari blog yang ditemukan dari defaultBlogs
+  const foundBlog = defaultBlogs.find((b) => b.id === blogId);
 
   console.log("Found Blog:", foundBlog);
 
+  // Menangani jika blog tidak ditemukan
   if (!foundBlog) {
     return (
       <section className="wrapper bg-soft-primary">
@@ -62,8 +44,9 @@ export default async function BlogDetailPage({ params }) {
           <h1>Blog tidak ditemukan</h1>
         </div>
       </section>
-    ); // Handle if blog is not found
+    );
   }
 
+  // Mengembalikan komponen BlogDetail dengan data blog yang ditemukan
   return <BlogDetail blog={foundBlog} />;
 }

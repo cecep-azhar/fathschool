@@ -1,8 +1,12 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleSmoothScroll = (e, href, offset) => {
       e.preventDefault();
@@ -17,52 +21,57 @@ const Navbar = () => {
           top: offsetPosition,
           behavior: 'smooth'
         });
+      } else {
+        // Navigasi ke halaman home jika tidak ada target
+        window.location.href = '/'; // Menggunakan window.location.href untuk navigasi
       }
     };
 
     const navLinks = document.querySelectorAll('a[href^="/#"]');
+    const handleClick = (e) => {
+      const href = e.currentTarget.getAttribute('href');
+      const offset = parseInt(e.currentTarget.getAttribute('data-offset') || '0', 10);
+      
+      if (href) {
+        handleSmoothScroll(e, href, offset);
+      }
+    };
+
     navLinks.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        const offset = parseInt(link.getAttribute('data-offset') || '0', 10);
-        if (href) {
-          handleSmoothScroll(e, href, offset);
-        }
-      });
+      link.addEventListener('click', handleClick);
     });
 
     return () => {
       navLinks.forEach((link) => {
-        link.removeEventListener('click', (e) => {
-          e.preventDefault();
-        });
+        link.removeEventListener('click', handleClick);
       });
     };
-  }, []);
+  }, [pathname]); // Menggunakan pathname sebagai dependensi
 
   return (
     <header>
       <nav className="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light caret-none">
         <div className="container flex-lg-row flex-nowrap align-items-center">
           <div className="navbar-brand w-100">
-            <a href="/">
-              <img
-                src="/assets/img/logo-dark.png"
-                srcSet="/assets/img/logo-dark@2x.png 2x"
-                alt=""
+            <Link href="/">
+              <Image
+                src="/assets/img/logo_fathschool.png"
+                alt="Logo"
+                width={150}
+                height={40}
               />
-            </a>
+            </Link>
           </div>
           <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div className="offcanvas-header d-lg-none">
-              <a href="/">
-                <img
-                  src="/assets/img/logo-light.png"
-                  srcSet="/assets/img/logo-light@2x.png 2x"
-                  alt=""
+              <Link href="/">
+                <Image
+                  src="/assets/img/logo_fathschool.png"
+                  alt="Logo"
+                  width={150}
+                  height={40}
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 className="btn-close btn-close-white"
@@ -78,38 +87,22 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    href="/#feature"
-                    data-offset="100"
-                  >
+                  <Link className="nav-link" href="/#feature" data-offset="100">
                     Fitur
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    href="/#faq"
-                    data-offset="200"
-                  >
+                  <Link className="nav-link" href="/#faq" data-offset="200">
                     FAQ
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    href="/#testimoni"
-                    data-offset="200"
-                  >
+                  <Link className="nav-link" href="/#testimoni" data-offset="200">
                     Testimoni
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    href="/blog"
-                    data-offset="0"
-                  >
+                  <Link className="nav-link" href="/blog" data-offset="0">
                     Blog
                   </Link>
                 </li>
@@ -143,10 +136,10 @@ const Navbar = () => {
             <ul className="navbar-nav flex-row align-items-center ms-auto">
               <li className="nav-item d-none d-md-block">
                 <a
-                  href="https://wa.me/62895617632726"
+                  href="https://wa.me/6285161721727"
                   className="btn btn-sm btn-primary rounded-pill"
                 >
-                  Contact
+                  Kontak
                 </a>
               </li>
               <li className="nav-item d-lg-none">

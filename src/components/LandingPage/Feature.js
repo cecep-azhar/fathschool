@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from 'next/image';
 
-// Fungsi untuk menginjeksi SVG
 const injectSVG = async (imgElement) => {
   const src = imgElement.getAttribute('src');
   if (!src) return;
@@ -15,13 +15,11 @@ const injectSVG = async (imgElement) => {
     const parser = new DOMParser();
     const svgElement = parser.parseFromString(svgText, "image/svg+xml").documentElement;
 
-    // Menghapus atribut yang tidak diperlukan
     svgElement.removeAttribute('xmlns:a');
-    svgElement.setAttribute('class', imgElement.className); // Menyalin kelas dari img ke svg
+    svgElement.setAttribute('class', imgElement.className);
 
-    // Pastikan parentNode ada sebelum mengganti
     if (imgElement.parentNode) {
-      imgElement.parentNode.replaceChild(svgElement, imgElement); // Mengganti img dengan svg
+      imgElement.parentNode.replaceChild(svgElement, imgElement);
     }
   } catch (error) {
     console.error('Error injecting SVG:', error);
@@ -32,7 +30,6 @@ export default function Feature({ props }) {
   const { title, features } = props;
 
   useEffect(() => {
-    // Menginjeksi semua gambar SVG setelah komponen dimount
     const svgImages = document.querySelectorAll('img.svg-inject');
     svgImages.forEach(injectSVG);
   }, []);
@@ -42,17 +39,21 @@ export default function Feature({ props }) {
       <div className="container pt-18 pt-md-20 pb-14 pb-md-16">
         <div className="row text-center">
           <div className="col-lg-10 col-xl-9 col-xxl-8 mx-auto position-relative">
-            <img
+            <Image
               src="/assets/img/svg/doodle3.svg"
               className="h-11 position-absolute d-none d-lg-block"
               style={{ top: "-45%", left: "23%" }}
               alt=""
+              width={100}
+              height={100}
             />
-            <img
+            <Image
               src="/assets/img/svg/doodle4.svg"
               className="h-8 position-absolute d-none d-lg-block"
               style={{ top: "6%", right: "2%" }}
               alt=""
+              width={100}
+              height={100}
             />
             <h2 className="fs-16 text-uppercase text-muted mb-3">App Features</h2>
             <h3 className="display-3 mb-11 px-lg-5 px-xl-0 px-xxl-6">{title}</h3>
@@ -66,10 +67,12 @@ export default function Feature({ props }) {
                 features.map((feature, index) => (
                   <div className="col-md-6 col-lg-3" key={index}>
                     <div className={`svg-bg svg-bg-lg ${feature.bgClass} rounded-xl mb-4`}>
-                      <img
+                      <Image
                         src={feature.imgSrc}
                         className="svg-inject icon-svg solid text-navy"
                         alt={feature.title}
+                        width={100}
+                        height={100}
                       />
                     </div>
                     <h4 className="fs-20">{feature.title}</h4>
@@ -84,19 +87,23 @@ export default function Feature({ props }) {
 
         <div className="row text-center">
           <div className="col-md-10 col-lg-7 mx-auto position-relative">
-            <img
+            <Image
               src="/assets/img/svg/doodle5.svg"
               className="w-15 position-absolute d-none d-lg-block"
               data-delay="1800"
               style={{ bottom: "-60%", right: "10%" }}
               alt=""
+              width={100}
+              height={100}
             />
-            <img
+            <Image
               src="/assets/img/svg/doodle6.svg"
               className="h-15 position-absolute d-none d-lg-block"
               data-delay="1800"
               style={{ top: "-40%", left: "-5%" }}
               alt=""
+              width={100}
+              height={100}
             />
             <h2 className="fs-16 text-uppercase text-muted mb-3">Cara Kerja FathSchool</h2>
             <h3 className="display-3 mb-8 px-xl-6">
@@ -110,10 +117,12 @@ export default function Feature({ props }) {
             <div className="row gy-10 gy-lg-0 text-center d-flex align-items-center">
               <div className="col-md-6 col-lg-4 mx-auto mb-n10 mb-lg-0">
                 <figure className="mx-auto">
-                  <img
-                    src="/assets/img/photos/devices4.png"
-                    srcSet="/assets/img/photos/devices4@2x.png 2x"
+                  <Image
+                    src="/assets/img/hero/device_cara_kerja.png"
+                    srcSet="/assets/img/hero/device_cara_kerja@2x.png 2x"
                     alt=""
+                    width={800}
+                    height={800}
                   />
                 </figure>
               </div>
@@ -121,32 +130,32 @@ export default function Feature({ props }) {
               <div className="col-md-6 col-lg-4 order-lg-first">
                 <div className="mb-8">
                   <span className="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span>
-                  <h4 className="fs-20">Download Application</h4>
+                  <h4 className="fs-20">Download Aplikasi</h4>
                   <p className="mb-0 px-xl-7">
-                    Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                    FathSchool tersedia di Playstore
                   </p>
                 </div>
                 <div>
                   <span className="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">02</span>
-                  <h4 className="fs-20">Quick Registration</h4>
+                  <h4 className="fs-20">Pendaftaran Cepat</h4>
                   <p className="mb-0 px-xl-7">
-                    Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  Daftar dengan mudah dan cepat untuk memulai pengalaman belajar Anda.
                   </p>
                 </div>
               </div>
               <div className="col-md-6 col-lg-4">
                 <div className="mb-8">
                   <span className="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">03</span>
-                  <h4 className="fs-20">Track Your Spending</h4>
+                  <h4 className="fs-20">Lacak Pengeluaran Anda</h4>
                   <p className="mb-0 px-xl-7">
-                    Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  Pantau pengeluaran Anda dengan mudah dan tetap dalam kendali keuangan.
                   </p>
                 </div>
                 <div>
                   <span className="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">04</span>
-                  <h4 className="fs-20">Have Total Control</h4>
+                  <h4 className="fs-20">Kendalikan Segalanya</h4>
                   <p className="mb-0 px-xl-7">
-                    Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  Dapatkan kontrol penuh atas keuangan Anda dan buat keputusan yang lebih baik.
                   </p>
                 </div>
               </div>

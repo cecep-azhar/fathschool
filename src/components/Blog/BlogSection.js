@@ -1,7 +1,8 @@
 "use client"
 
 import React from "react";
-import Link from "next/link"; // Use Next.js Link if this is a Next.js project
+import Link from "next/link";
+import Image from 'next/image';
 
 const BlogSection = ({ blogs }) => {
   return (
@@ -10,15 +11,16 @@ const BlogSection = ({ blogs }) => {
         <div className="row">
           <div className="col-lg-10 mx-auto">
             <div className="blog classic-view mt-n17">
-              {/* First 3 blogs displayed vertically */}
               {blogs.slice(0, 3).map((blog, index) => (
                 <article className="post" key={index}>
                   <div className="card">
                     <figure className="card-img-top overlay overlay-1 hover-scale">
                       <Link href={`/blog/${blog.id}`} className="link-dark">
-                        <img
+                        <Image
                           src={`/assets/img/blog/${blog.image}`}
                           alt={blog.title}
+                          width={1000}
+                          height={500}
                         />
                       </Link>
                       <figcaption>
@@ -71,7 +73,6 @@ const BlogSection = ({ blogs }) => {
                 </article>
               ))}
 
-              {/* Remaining blogs displayed in grid format */}
               <div className="blog grid grid-view">
                 <div className="row isotope gx-md-8 gy-8 mb-8">
                   {blogs.slice(3).map((blog, index) => (
@@ -79,7 +80,12 @@ const BlogSection = ({ blogs }) => {
                       <div className="card">
                         <figure className="card-img-top overlay overlay-1 hover-scale">
                           <Link href={`/blog/${blog.id}`}>
-                            <img src={`/assets/img/blog/${blog.image}`} alt={blog.title} />
+                            <Image
+                              src={`/assets/img/blog/${blog.image}`}
+                              alt={blog.title}
+                              width={1000}
+                              height={500}
+                            />
                           </Link>
                           <figcaption>
                             <h5 className="from-top mb-0">Read More</h5>
@@ -126,37 +132,36 @@ const BlogSection = ({ blogs }) => {
                 </div>
               </div>
 
-              {/* Pagination */}
               <nav className="d-flex" aria-label="pagination">
                 <ul className="pagination">
                   <li className="page-item disabled">
-                    <a className="page-link" href="#" aria-label="Previous">
+                    <Link className="page-link" href="#" aria-label="Previous">
                       <span aria-hidden="true">
                         <i className="uil uil-arrow-left"></i>
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="page-item active">
-                    <a className="page-link" href="#">
+                    <Link className="page-link" href="#">
                       1
-                    </a>
+                    </Link>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">
+                    <Link className="page-link" href="#">
                       2
-                    </a>
+                    </Link>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">
+                    <Link className="page-link" href="#">
                       3
-                    </a>
+                    </Link>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#" aria-label="Next">
+                    <Link className="page-link" href="#" aria-label="Next">
                       <span aria-hidden="true">
                         <i className="uil uil-arrow-right"></i>
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

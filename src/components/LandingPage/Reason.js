@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from 'next/image';
 
 const backgroundClasses = [
   "bg-pale-grape",
@@ -11,7 +12,6 @@ const backgroundClasses = [
   "bg-pale-leaf"
 ];
 
-// Fungsi untuk menginjeksi SVG
 const injectSVG = async (imgElement) => {
   const src = imgElement.getAttribute('src');
   if (!src) return;
@@ -24,13 +24,11 @@ const injectSVG = async (imgElement) => {
     const parser = new DOMParser();
     const svgElement = parser.parseFromString(svgText, "image/svg+xml").documentElement;
 
-    // Menghapus atribut yang tidak diperlukan
     svgElement.removeAttribute('xmlns:a');
-    svgElement.setAttribute('class', imgElement.className); // Menyalin kelas dari img ke svg
+    svgElement.setAttribute('class', imgElement.className);
 
-    // Pastikan parentNode ada sebelum mengganti
     if (imgElement.parentNode) {
-      imgElement.parentNode.replaceChild(svgElement, imgElement); // Mengganti img dengan svg
+      imgElement.parentNode.replaceChild(svgElement, imgElement);
     }
   } catch (error) {
     console.error('Error injecting SVG:', error);
@@ -39,7 +37,6 @@ const injectSVG = async (imgElement) => {
 
 export default function Reason({ props, testimonials }) {
   useEffect(() => {
-    // Menginjeksi semua gambar SVG setelah komponen dimount
     const svgImages = document.querySelectorAll('img.svg-inject');
     svgImages.forEach(injectSVG);
   }, []);
@@ -49,8 +46,22 @@ export default function Reason({ props, testimonials }) {
       <div className="container py-16 py-md-18">
         <div className="row text-center">
           <div className="col-md-11 col-lg-9 col-xl-8 col-xxl-7 mx-auto position-relative">
-            <img src="/assets/img/svg/doodle3.svg" className="h-11 position-absolute d-none d-lg-block" style={{ top: "-20%", right: "-12%" }} alt="" />
-            <img src="/assets/img/svg/doodle9.svg" className="h-17 position-absolute d-none d-lg-block" style={{ bottom: "5%", left: "-17%" }} alt="" />
+            <Image 
+              src="/assets/img/svg/doodle3.svg" 
+              className="h-11 position-absolute d-none d-lg-block" 
+              style={{ top: "-20%", right: "-12%" }} 
+              alt="" 
+              width={100} 
+              height={100} 
+            />
+            <Image 
+              src="/assets/img/svg/doodle9.svg" 
+              className="h-17 position-absolute d-none d-lg-block" 
+              style={{ bottom: "5%", left: "-17%" }} 
+              alt="" 
+              width={100} 
+              height={100} 
+            />
             <h2 className="fs-16 text-uppercase text-muted mb-3">{props.title}</h2>
             <h3 className="display-3 mb-12">{props.subTitle}</h3>
           </div>
@@ -58,7 +69,13 @@ export default function Reason({ props, testimonials }) {
         <div className="row d-flex align-items-start mb-19">
           <div className="col-lg-6 position-lg-sticky" style={{ top: "8rem" }}>
             <figure>
-              <img src="/assets/img/photos/devices5.png" srcSet="/assets/img/photos/devices5@2x.png 2x" alt="" />
+              <Image 
+                src="/assets/img/hero/device_mengapa.png" 
+                srcSet="/assets/img/hero/device_mengapa@2x.png 2x" 
+                alt="" 
+                width={500} 
+                height={500} 
+              />
             </figure>
           </div>
           <div className="col-lg-5 ms-auto">
@@ -68,7 +85,13 @@ export default function Reason({ props, testimonials }) {
                 <div className="d-flex flex-row mb-8" key={index}>
                   <div>
                     <div className={`svg-bg svg-bg-lg ${randomBgClass} rounded-xl me-5`}>
-                      <img src={reason.image} className="svg-inject icon-svg solid text-navy" alt="" />
+                      <Image 
+                        src={reason.image} 
+                        className="svg-inject icon-svg solid text-navy" 
+                        alt="" 
+                        width={100} 
+                        height={100} 
+                      />
                     </div>
                   </div>
                   <div>
@@ -82,9 +105,30 @@ export default function Reason({ props, testimonials }) {
         </div>
         <div id="testimoni" className="row">
           <div className="col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center position-relative">
-            <img src="/assets/img/svg/doodle1.svg" className="h-9 position-absolute d-none d-lg-block" style={{ top: "2%", left: "9%" }} alt="" />
-            <img src="/assets/img/svg/doodle10.svg" className="h-7 position-absolute d-none d-lg-block" style={{ top: "-45%", left: "-17%" }} alt="" />
-            <img src="/assets/img/svg/doodle11.svg" className="h-13 position-absolute d-none d-lg-block" style={{ top: "-40%", right: "-15%" }} alt="" />
+            <Image 
+              src="/assets/img/svg/doodle1.svg" 
+              className="h-9 position-absolute d-none d-lg-block" 
+              style={{ top: "2%", left: "9%" }} 
+              alt="" 
+              width={100} 
+              height={100} 
+            />
+            <Image 
+              src="/assets/img/svg/doodle10.svg" 
+              className="h-7 position-absolute d-none d-lg-block" 
+              style={{ top: "-45%", left: "-17%" }} 
+              alt="" 
+              width={100} 
+              height={100} 
+            />
+            <Image 
+              src="/assets/img/svg/doodle11.svg" 
+              className="h-13 position-absolute d-none d-lg-block" 
+              style={{ top: "-40%", right: "-15%" }} 
+              alt="" 
+              width={100} 
+              height={100} 
+            />
             <h2 className="fs-16 text-uppercase text-muted mb-3">{testimonials.title}</h2>
             <h3 className="display-3 mb-11 px-xl-10 px-xxl-13">{testimonials.subTitle}</h3>
           </div>
