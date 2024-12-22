@@ -59,6 +59,7 @@ const Navbar = () => {
                 alt="Logo"
                 width={150}
                 height={40}
+                priority={true}
               />
             </Link>
           </div>
@@ -70,6 +71,7 @@ const Navbar = () => {
                   alt="Logo"
                   width={150}
                   height={40}
+                  priority={true}
                 />
               </Link>
               <button

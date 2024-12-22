@@ -42,16 +42,26 @@ export default function Feature({ props }) {
             <Image
               src="/assets/img/svg/doodle3.svg"
               className="h-11 position-absolute d-none d-lg-block"
-              style={{ top: "-45%", left: "23%" }}
-              alt=""
+              style={{
+                top: "-20%",
+                left: "-12%",
+                width: "auto",
+                height: "auto"
+              }}
+              alt="svg"
               width={100}
               height={100}
             />
             <Image
               src="/assets/img/svg/doodle4.svg"
               className="h-8 position-absolute d-none d-lg-block"
-              style={{ top: "6%", right: "2%" }}
-              alt=""
+              style={{
+                top: "-20%",
+                left: "-12%",
+                width: "auto",
+                height: "auto"
+              }}
+              alt="svg"
               width={100}
               height={100}
             />
@@ -91,8 +101,13 @@ export default function Feature({ props }) {
               src="/assets/img/svg/doodle5.svg"
               className="w-15 position-absolute d-none d-lg-block"
               data-delay="1800"
-              style={{ bottom: "-60%", right: "10%" }}
-              alt=""
+              style={{
+                top: "-20%",
+                left: "-12%",
+                width: "auto",
+                height: "auto"
+              }}
+              alt="svg"
               width={100}
               height={100}
             />
@@ -100,8 +115,13 @@ export default function Feature({ props }) {
               src="/assets/img/svg/doodle6.svg"
               className="h-15 position-absolute d-none d-lg-block"
               data-delay="1800"
-              style={{ top: "-40%", left: "-5%" }}
-              alt=""
+              style={{
+                top: "-20%",
+                left: "-12%",
+                width: "auto",
+                height: "auto"
+              }}
+              alt="svg"
               width={100}
               height={100}
             />
