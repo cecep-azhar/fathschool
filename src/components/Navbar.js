@@ -22,8 +22,8 @@ const Navbar = () => {
           behavior: 'smooth'
         });
       } else {
-        // Navigasi ke halaman home jika tidak ada target
-        window.location.href = '/'; // Menggunakan window.location.href untuk navigasi
+       
+        window.location.href = '/'; 
       }
     };
 
@@ -58,7 +58,7 @@ const Navbar = () => {
                 src="/assets/img/logo_fathschool.png"
                 alt="Logo"
                 width={150}
-                height={40}
+                height={28}
                 priority={true}
               />
             </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
                   src="/assets/img/logo_fathschool.png"
                   alt="Logo"
                   width={150}
-                  height={40}
+                  height={28}
                   priority={true}
                 />
               </Link>
@@ -111,9 +111,9 @@ const Navbar = () => {
               </ul>
               <div className="d-lg-none mt-auto pt-6 pb-6 order-4">
                 <a href="mailto:first.last@email.com" className="link-inverse">
-                  info@email.com
+                  hi@fathforce.com
                 </a>
-                <br /> 00 (123) 456 78 90 <br />
+                <br /> 0851-6172-1727 <br />
                 <nav className="nav social social-white mt-4">
                   <a href="#">
                     <i className="uil uil-twitter"></i>

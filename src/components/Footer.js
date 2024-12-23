@@ -72,7 +72,7 @@ const Footer = () => {
                 <address>
                 Pajaten RT 03 RW 19 Desa Kecamatan Cileunyi Kabupaten Bandung, Jawa Barat
                 </address>
-                <a href="mailto:first.last@email.com">hi@fathforce</a>
+                <a href="mailto:first.last@email.com">hi@fathforce.com</a>
                 <br /> 0851-6172-1727
               </div>
               {/* /.widget */}

@@ -46,7 +46,7 @@ export default function Reason({ props, testimonials }) {
       <div className="container py-16 py-md-18">
         <div className="row text-center">
           <div className="col-md-11 col-lg-9 col-xl-8 col-xxl-7 mx-auto position-relative">
-            <Image 
+            <Image a
               src="/assets/img/svg/doodle3.svg" 
               className="h-11 position-absolute d-none d-lg-block" 
               style={{ top: "-20%", right: "-12%" }} 

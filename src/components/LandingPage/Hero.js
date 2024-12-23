@@ -85,7 +85,7 @@ export default function Hero({ props }) {
           <div
             className="col-lg-6 ms-auto mb-n20 mb-xxl-n22"
             data-cue="fadeIn"
-            data-delay="3000"
+            data-delay="2500"
           >
             <figure>
               <Image
