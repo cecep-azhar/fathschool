@@ -1,14 +1,15 @@
 "use client";
-import React, { useEffect } from "react";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-const Navbar = () => {
+export const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleSmoothScroll = (e, href, offset) => {
+    const handleSmoothScroll = (e: any, href: string, offset: number) => {
       e.preventDefault();
       const targetId = href.replace('/#', '');
       const targetElement = document.getElementById(targetId);
@@ -28,7 +29,7 @@ const Navbar = () => {
     };
 
     const navLinks = document.querySelectorAll('a[href^="/#"]');
-    const handleClick = (e) => {
+    const handleClick = (e: any) => {
       const href = e.currentTarget.getAttribute('href');
       const offset = parseInt(e.currentTarget.getAttribute('data-offset') || '0', 10);
       
@@ -46,7 +47,7 @@ const Navbar = () => {
         link.removeEventListener('click', handleClick);
       });
     };
-  }, [pathname]); // Menggunakan pathname sebagai dependensi
+  }, [pathname]); 
 
   return (
     <header>
@@ -157,4 +158,3 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;

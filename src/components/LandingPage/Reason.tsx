@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Image from 'next/image';
 
-const backgroundClasses = [
+export const backgroundClasses = [
   "bg-pale-grape",
   "bg-pale-yellow",
   "bg-pale-green",
@@ -12,7 +12,7 @@ const backgroundClasses = [
   "bg-pale-leaf"
 ];
 
-const injectSVG = async (imgElement) => {
+const injectSVG = async (imgElement: any) => {
   const src = imgElement.getAttribute('src');
   if (!src) return;
 
@@ -35,7 +35,7 @@ const injectSVG = async (imgElement) => {
   }
 };
 
-export default function Reason({ props, testimonials }) {
+export default function Reason({ props, testimonials }: { props: any, testimonials: any }) {
   useEffect(() => {
     const svgImages = document.querySelectorAll('img.svg-inject');
     svgImages.forEach(injectSVG);
@@ -46,11 +46,11 @@ export default function Reason({ props, testimonials }) {
       <div className="container py-16 py-md-18">
         <div className="row text-center">
           <div className="col-md-11 col-lg-9 col-xl-8 col-xxl-7 mx-auto position-relative">
-            <Image a
+            <Image 
               src="/assets/img/svg/doodle3.svg" 
               className="h-11 position-absolute d-none d-lg-block" 
               style={{ top: "-20%", right: "-12%" }} 
-              alt="" 
+              alt="image" 
               width={100} 
               height={100} 
             />
@@ -58,7 +58,7 @@ export default function Reason({ props, testimonials }) {
               src="/assets/img/svg/doodle9.svg" 
               className="h-17 position-absolute d-none d-lg-block" 
               style={{ bottom: "5%", left: "-17%" }} 
-              alt="" 
+              alt="image" 
               width={100} 
               height={100} 
             />
@@ -71,18 +71,17 @@ export default function Reason({ props, testimonials }) {
             <figure>
               <Image 
                 src="/assets/img/hero/device_mengapa.png" 
-                srcSet="/assets/img/hero/device_mengapa@2x.png 2x" 
-                alt="" 
+                alt="image" 
                 width={500} 
                 height={500} 
               />
             </figure>
           </div>
           <div className="col-lg-5 ms-auto">
-            {props.data.map((reason, index) => {
+            {props.data.map((reason: any) => {
               const randomBgClass = backgroundClasses[Math.floor(Math.random() * backgroundClasses.length)];
               return (
-                <div className="d-flex flex-row mb-8" key={index}>
+                <div className="d-flex flex-row mb-8" key={reason.title}>
                   <div>
                     <div className={`svg-bg svg-bg-lg ${randomBgClass} rounded-xl me-5`}>
                       <Image 
@@ -103,13 +102,14 @@ export default function Reason({ props, testimonials }) {
             })}
           </div>
         </div>
+        
         <div id="testimoni" className="row">
           <div className="col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center position-relative">
             <Image 
               src="/assets/img/svg/doodle1.svg" 
               className="h-9 position-absolute d-none d-lg-block" 
               style={{ top: "2%", left: "9%" }} 
-              alt="" 
+              alt="image" 
               width={100} 
               height={100} 
             />
@@ -117,7 +117,7 @@ export default function Reason({ props, testimonials }) {
               src="/assets/img/svg/doodle10.svg" 
               className="h-7 position-absolute d-none d-lg-block" 
               style={{ top: "-45%", left: "-17%" }} 
-              alt="" 
+              alt="image" 
               width={100} 
               height={100} 
             />
@@ -125,7 +125,7 @@ export default function Reason({ props, testimonials }) {
               src="/assets/img/svg/doodle11.svg" 
               className="h-13 position-absolute d-none d-lg-block" 
               style={{ top: "-40%", right: "-15%" }} 
-              alt="" 
+              alt="image" 
               width={100} 
               height={100} 
             />
@@ -135,8 +135,8 @@ export default function Reason({ props, testimonials }) {
         </div>
         <div className="grid mb-12">
           <div className="row isotope gy-6">
-            {testimonials.data.map((testimonial, index) => (
-              <div className="item col-md-6 col-xl-4" key={index}>
+            {testimonials.data.map((testimonial: any) => (
+              <div className="item col-md-6 col-xl-4" key={testimonial.id}>
                 <div className="card shadow-none rounded-xl bg-soft-grape">
                   <div className="card-body">
                     <blockquote className="icon mb-0">

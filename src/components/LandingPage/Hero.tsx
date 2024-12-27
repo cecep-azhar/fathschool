@@ -1,7 +1,7 @@
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Hero({ props }) {
+export default function Hero({ props }: { props: any }) {
   const { title, subTitle } = props;
 
   const titleParts = title.split("FathSchool");
@@ -71,22 +71,21 @@ export default function Hero({ props }) {
               data-delay="500"
             >
               <span>
-                <a href="#">
-                  <img
+                <Link href="#">
+                  <Image
                     src="/assets/img/photos/button-google-play.svg"
-                    className="h-11 rounded-xl"
-                    alt="Google Play"
+                    className="h-12 rounded-xl"
+                    alt="image"
+                    width={220}
+                    height={400}
+                    loading="lazy"
                   />
-                </a>
+                </Link>
               </span>
             </div>
           </div>
 
-          <div
-            className="col-lg-6 ms-auto mb-n20 mb-xxl-n22"
-            data-cue="fadeIn"
-            data-delay="2500"
-          >
+          <div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" data-cue="fadeIn" data-delay="2500">
             <figure>
               <Image
                 src="/assets/img/hero/device_hero.png"
@@ -95,12 +94,12 @@ export default function Hero({ props }) {
                 height={500}
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                sizes="(max-width: 1200px) 100vw, 50vw"
               />
             </figure>
           </div>
         </div>
       </div>
+
       <div className="overflow-hidden" style={{ zIndex: 1 }}>
         <div className="divider text-light mx-n2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
