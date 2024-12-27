@@ -1,5 +1,6 @@
-import { TypeFooterData } from "@/types/data";
+import { TypeBenefits, TypeFooter, TypeTestimonials } from "@/types/data";
 
+import IconBenefits from "@/assets/img/icons/solid/computer.svg";
 import doodle1 from "@/assets/img/svg/doodle1.svg";
 import doodle3 from "@/assets/img/svg/doodle3.svg"
 import doodle9 from "@/assets/img/svg/doodle9.svg"
@@ -131,41 +132,47 @@ const defaultTestimonials = {
   ],
 };
 
-
-const dataTestimonial = {
+// * Testimonials
+const dataTestimonials: TypeTestimonials = {
   name: "Testimonial",
-  title: "Kata Mereka Tentang FathSchool.",
-  subTitle: "Pelanggan yang Puas",
+  headline: "Kata Mereka Tentang FathSchool.",
+  desc: "Pelanggan yang Puas",
   defaultData: [
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-grape'
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-green'
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-orange'
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-pink'
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-blue'
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
       message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: 'bg-soft-yellow'
     },
   ],
   designDoodle: [
@@ -196,8 +203,8 @@ const dataTestimonial = {
   ]
 }
 
-
-const dataFooter: TypeFooterData = {
+// * Footer
+const dataFooter: TypeFooter = {
   name: "Footer",
   headline: "Bergabung Bersama Kami",
   desc: "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
@@ -261,7 +268,8 @@ const dataFooter: TypeFooterData = {
   ],
 };
 
-const dataBenefits = {
+// * Benefits
+const dataBenefits : TypeBenefits = {
   name: 'Mengapa Fathschool?',
   headline: "Bergabung Bersama Kami",
   desc: "Berikut ini Beberapa Alasan Mengapa Pelanggan Kami Memilih Fathschool.",
@@ -282,12 +290,50 @@ const dataBenefits = {
         left: "-17%"
       }
     },
+  ],
+  defaultData: [
+    {
+      name: "John Doe",
+      title: "Aman & Berbasis Cloud",
+      desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
+      icon: {
+        src: IconBenefits,
+        color: "bg-pale-grape",
+      }
+    },
+    {
+      name: "John Doe",
+      title: "Aman & Berbasis Cloud",
+      desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
+      icon: {
+        src: IconBenefits,
+        color: "bg-pale-green",
+      }
+    },
+    {
+      name: "John Doe",
+      title: "Aman & Berbasis Cloud",
+      desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
+      icon: {
+        src: IconBenefits,
+        color: "bg-pale-pink",
+      }
+    },
+    {
+      name: "John Doe",
+      title: "Aman & Berbasis Cloud",
+      desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
+      icon: {
+        src: IconBenefits,
+        color: "bg-pale-yellow",
+      }
+    },
   ]
 }
 
 export {
   dataFooter,
-  dataTestimonial,
+  dataTestimonials,
   dataBenefits,
   
   defaultHero,
