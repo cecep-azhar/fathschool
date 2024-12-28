@@ -1,0 +1,50 @@
+import IconComputer from "@/assets/img/icons/solid/computer.svg";
+import IconCode from "@/assets/img/icons/solid/code.svg";
+
+// IMAGES CONTENT
+import ImageBenefits from "@/assets/img/content/Benefits.jpg";
+import ImageDevice from "@/assets/img/content/Device.png";
+import ImageHero from "@/assets/img/content/Hero.png";
+
+import LogoDark from "@/assets/img/content/Logo Dark.png";
+import LogoLight from "@/assets/img/content/Logo Light.png";
+
+// BACKGROUND
+import bgFaq from "@/assets/img/photos/bg22.png";
+
+// POSTER VIDEO
+import Poster from "@/assets/img/content/Poster.png";
+
+// DOODLE
+import doodle1 from "@/assets/img/svg/doodle1.svg";
+import doodle2 from "@/assets/img/svg/doodle2.svg";
+import doodle3 from "@/assets/img/svg/doodle3.svg";
+import doodle4 from "@/assets/img/svg/doodle4.svg";
+import doodle5 from "@/assets/img/svg/doodle5.svg";
+import doodle6 from "@/assets/img/svg/doodle6.svg";
+import doodle7 from "@/assets/img/svg/doodle7.svg";
+import doodle8 from "@/assets/img/svg/doodle8.svg";
+import doodle9 from "@/assets/img/svg/doodle9.svg";
+import doodle10 from "@/assets/img/svg/doodle10.svg";
+import doodle11 from "@/assets/img/svg/doodle11.svg";
+
+export {
+  ImageBenefits,
+  ImageDevice,
+  ImageHero,
+  LogoDark,
+  LogoLight,
+  Poster,
+  bgFaq,
+  doodle1,
+  doodle2,
+  doodle3,
+  doodle4,
+  doodle5,
+  doodle6,
+  doodle7,
+  doodle8,
+  doodle9,
+  doodle10,
+  doodle11,
+};

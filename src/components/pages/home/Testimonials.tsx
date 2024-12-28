@@ -1,32 +1,20 @@
+import { Headline } from "@/components/fragments/Headline";
 import { Container } from "@/components/layouts/Container";
 import { dataTestimonials } from "@/data";
-import Image from "next/image";
 
 export function TestimonialsSection(): React.ReactNode {
   return (
     <Container>
       <div id="testimoni" className="row">
-        <Headline data={dataTestimonials} />
+        <Headline doodleImages={dataTestimonials.designDoodle} headline={dataTestimonials.headline} desc={dataTestimonials.desc} name={dataTestimonials.name} />
       </div>
 
-      <div className="grid mb-12">
+      <div className="grid">
         <Testimonials data={dataTestimonials} />
       </div>
     </Container>
   );
 }
-
-const Headline = ({ data }: { data: typeof dataTestimonials }) => {
-  return (
-    <div className="col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center position-relative">
-      {data.designDoodle.map((doodle, index) => (
-        <Image key={index} src={doodle.src} className="position-absolute d-none d-lg-block" style={doodle.style} alt="doodle" width={70} height={70}/>
-      ))}
-      <h2 className="fs-16 text-uppercase text-muted mb-3">{data.headline}</h2>
-      <h3 className="display-3 mb-11 px-xl-10 px-xxl-13">{data.desc}</h3>
-    </div>
-  );
-};
 
 const Testimonials = ({ data }: { data: typeof dataTestimonials }) => {
   return (

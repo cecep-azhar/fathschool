@@ -1,7 +1,8 @@
+import { ImageHero } from "@/data/images";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero({ props }: { props: any }) {
+export function Hero({ props }: { props: any }) {
   const { title, subTitle } = props;
 
   const titleParts = title.split("FathSchool");
@@ -13,7 +14,7 @@ export default function Hero({ props }: { props: any }) {
       id="home"
       className="wrapper image-wrapper bg-overlay bg-overlay-light-600"
       style={{
-        backgroundImage: "url(/assets/img/photos/bg23.png)",
+        backgroundImage: "url(/assets/img/photos/bg22.png)",
         backgroundSize: "cover",
         backgroundPosition: "center"
       }}
@@ -32,10 +33,8 @@ export default function Hero({ props }: { props: any }) {
               data-cue="fadeIn"
               data-delay="3000"
               style={{
-                top: "-20%",
+                top: "-10%",
                 left: "-12%",
-                width: "auto",
-                height: "auto"
               }}
               alt="svg"
               width={100}
@@ -48,10 +47,8 @@ export default function Hero({ props }: { props: any }) {
               data-cue="fadeIn"
               data-delay="2000"
               style={{
-                top: "-20%",
-                left: "-12%",
-                width: "auto",
-                height: "auto"
+                top: "30%",
+                right: "-12%",
               }}
               alt="svg"
               width={100}
@@ -74,9 +71,9 @@ export default function Hero({ props }: { props: any }) {
                 <Link href="#">
                   <Image
                     src="/assets/img/photos/button-google-play.svg"
-                    className="h-12 rounded-xl"
+                    className="h-11 rounded-xl"
                     alt="image"
-                    width={220}
+                    width={200}
                     height={400}
                     loading="lazy"
                   />
@@ -88,12 +85,13 @@ export default function Hero({ props }: { props: any }) {
           <div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" data-cue="fadeIn" data-delay="2500">
             <figure>
               <Image
-                src="/assets/img/hero/device_hero.png"
+                src={ImageHero.src}
                 alt="Hero Device"
                 width={500}
                 height={500}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                quality={100}
+                loading="lazy"
+                blurDataURL="/assets/img/hero/device_hero.png"
               />
             </figure>
           </div>

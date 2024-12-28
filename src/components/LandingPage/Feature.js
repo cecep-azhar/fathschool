@@ -79,7 +79,7 @@ export default function Feature({ props }) {
                     <div className={`svg-bg svg-bg-lg ${feature.bgClass} rounded-xl mb-4`}>
                       <Image
                         src={feature.imgSrc}
-                        className="svg-inject icon-svg solid text-navy"
+                        className="icon-svg solid text-navy"
                         alt={feature.title}
                         width={100}
                         height={100}

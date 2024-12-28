@@ -10,15 +10,8 @@ export default function FAQSection({ props }) {
   }
 
   return (
-    <section
-      id="faq"
-      className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content"
-      data-image-src="/assets/img/photos/bg23.png"
-    >
-      <div
-        className="container py-14 pt-md-16 pt-lg-0 pb-md-17 position-relative"
-        style={{ zIndex: 2 }}
-      >
+    <section id="faq" className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content" data-image-src="/assets/img/photos/bg23.png">
+      <div className="container py-14 pt-md-16 pt-lg-0 pb-md-17 position-relative" style={{ zIndex: 2 }}>
         <div className="row">
           <div className="col-xl-11 col-xxl-10 mx-auto">
             <div className="mt-lg-n20 mt-xl-n22 mb-14 mb-md-16 rounded-xl">
@@ -27,11 +20,10 @@ export default function FAQSection({ props }) {
                 height="391"
                 src="https://www.youtube-nocookie.com/embed/KRtRogig5Vg?enablejsapi=0"
                 title="Introduce FathSchool"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
                 sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
+                loading="lazy"
+                allowFullScreen
               ></iframe>
             </div>
             <div className="position-relative">

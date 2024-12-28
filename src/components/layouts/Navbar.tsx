@@ -1,154 +1,41 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import Image from "next/image";
+import { LogoDark, LogoLight } from "@/data/images";
+import { Hamburger } from "../elements/Hamburger";
+import { dataFooter, MenuNavbar } from "@/data";
 
 export const Navbar: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const handleSmoothScroll = (e: any, href: string, offset: number) => {
-      e.preventDefault();
-      const targetId = href.replace('/#', '');
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-       
-        window.location.href = '/'; 
-      }
-    };
-
-    const navLinks = document.querySelectorAll('a[href^="/#"]');
-    const handleClick = (e: any) => {
-      const href = e.currentTarget.getAttribute('href');
-      const offset = parseInt(e.currentTarget.getAttribute('data-offset') || '0', 10);
-      
-      if (href) {
-        handleSmoothScroll(e, href, offset);
-      }
-    };
-
-    navLinks.forEach((link) => {
-      link.addEventListener('click', handleClick);
-    });
-
-    return () => {
-      navLinks.forEach((link) => {
-        link.removeEventListener('click', handleClick);
-      });
-    };
-  }, [pathname]); 
-
   return (
     <header>
       <nav className="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light caret-none">
         <div className="container flex-lg-row flex-nowrap align-items-center">
-          <div className="navbar-brand w-100">
-            <Link href="/">
-              <Image
-                src="/assets/img/logo_fathschool.png"
-                alt="Logo"
-                width={150}
-                height={28}
-                priority={true}
-              />
-            </Link>
-          </div>
+          <LogoDesktop />
+
           <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-            <div className="offcanvas-header d-lg-none">
-              <Link href="/">
-                <Image
-                  src="/assets/img/logo_fathschool.png"
-                  alt="Logo"
-                  width={150}
-                  height={28}
-                  priority={true}
-                />
-              </Link>
-              <button
-                type="button"
-                className="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
+            <LogoMobile />
+
             <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" href="/#home" data-offset="80">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/#feature" data-offset="100">
-                    Fitur
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/#faq" data-offset="200">
-                    FAQ
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/#testimoni" data-offset="200">
-                    Testimoni
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/blog" data-offset="0">
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-              <div className="d-lg-none mt-auto pt-6 pb-6 order-4">
-                <a href="mailto:first.last@email.com" className="link-inverse">
-                  hi@fathforce.com
-                </a>
-                <br /> 0851-6172-1727 <br />
-                <nav className="nav social social-white mt-4">
-                  <a href="#">
-                    <i className="uil uil-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i className="uil uil-facebook-f"></i>
-                  </a>
-                  <a href="#">
-                    <i className="uil uil-dribbble"></i>
-                  </a>
-                  <a href="#">
-                    <i className="uil uil-instagram"></i>
-                  </a>
-                  <a href="#">
-                    <i className="uil uil-youtube"></i>
-                  </a>
-                </nav>
-              </div>
+              <Menu data={MenuNavbar} />
+
+              <InformationMobile />
             </div>
           </div>
+
           <div className="navbar-other w-100 d-flex ms-auto">
             <ul className="navbar-nav flex-row align-items-center ms-auto">
               <li className="nav-item d-none d-md-block">
-                <a
+                <Link
                   href="https://wa.me/6285161721727"
                   className="btn btn-sm btn-primary rounded-pill"
                 >
                   Kontak
-                </a>
+                </Link>
               </li>
+
               <li className="nav-item d-lg-none">
-                <button className="hamburger offcanvas-nav-btn">
-                  <span></span>
-                </button>
+                <Hamburger />
               </li>
             </ul>
           </div>
@@ -158,3 +45,75 @@ export const Navbar: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => 
   );
 };
 
+const Menu = ({ data }: { data: typeof MenuNavbar }) => {
+  return (
+    <ul className="navbar-nav">
+      {data.map((item, index) => (
+        <li key={index} className="nav-item">
+          <Link className="nav-link" href={item.href}>
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const InformationMobile = () => {
+  return (
+    <div className="d-lg-none mt-auto pt-6 pb-6 order-4">
+      <Link href={`mailto:${dataFooter.columns[2].extra?.email}`} className="link-inverse">
+        {dataFooter.columns[2].extra?.email}
+      </Link>
+      <br />
+      <Link href={`tel:${dataFooter.columns[2].extra?.phone}`} className="link-inverse">
+        {dataFooter.columns[2].extra?.phone}
+      </Link>
+      <nav className="nav social social-white mt-4">
+        {dataFooter.sosmed.map((item, index) => (
+          <Link key={index} href={item.link} target="_blank">
+            <i className={item.icon}></i>
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
+};
+
+const LogoMobile = () => {
+  return (
+    <div className="offcanvas-header d-lg-none">
+      <Link href="/">
+        <Image
+          src={LogoLight.src}
+          alt="Logo"
+          blurDataURL={LogoLight.blurDataURL}
+          width={125}
+          height={28}
+        />
+      </Link>
+      <button
+        type="button"
+        className="btn-close btn-close-white"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  );
+};
+
+const LogoDesktop = () => {
+  return (
+    <div className="navbar-brand w-100">
+      <Link href="/">
+        <Image
+          src={LogoDark.src}
+          blurDataURL={LogoDark.blurDataURL}
+          alt="Logo"
+          width={150}
+          height={30}
+        />
+      </Link>
+    </div>
+  );
+};

@@ -2,11 +2,13 @@ import { dataFooter } from "@/data";
 import { Container } from "./Container";
 import Link from "next/link";
 
-export const Footer: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
+export const Footer: React.FC<
+  React.HtmlHTMLAttributes<HTMLDivElement>
+> = () => {
   return (
     <>
       <footer className="bg-dark text-inverse">
-        <Container>
+        <Container padding="py-13">
           <div className="row gy-6 gy-lg-0">
             <FooterHeader data={dataFooter} />
             <div className="col-lg-2 d-none d-lg-block"></div>
@@ -29,12 +31,11 @@ export const Footer: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => 
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
-
     </>
   );
 };
 
-const FooterHeader = ({data}: {data: typeof dataFooter}) => {
+const FooterHeader = ({ data }: { data: typeof dataFooter }) => {
   return (
     <div className="col-lg-4">
       <div className="widget">
@@ -48,36 +49,43 @@ const FooterHeader = ({data}: {data: typeof dataFooter}) => {
   );
 };
 
-const FooterBody = ({data}: {data: typeof dataFooter}) => {
+const FooterBody = ({ data }: { data: typeof dataFooter }) => {
   return data.columns.map((column, index) => (
     <div key={index} className="col-md-4 col-lg-2">
       <div className="widget">
         <h4 className="widget-title text-white mb-3">{column.title}</h4>
         {column.items && (
           <ul className="list-unstyled text-reset mb-0">
-            {column.items.map((item, idx) => (
-              <li key={idx}>
-                <Link href={item.link}>{item.name}</Link>
-              </li>
+            {column.items.map((item) => (
+              <>
+                <li key={item.name}>
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+                {column.extra && (
+                  <>
+                    <li>
+                      <Link href={`mailto:${column.extra.email}`}>
+                        {column.extra.email}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={`tel:${column.extra.phone}`}>
+                        {column.extra.phone}
+                      </Link>
+                    </li>
+                  </>
+                )}
+              </>
             ))}
           </ul>
         )}
-        {column.extra && (
-          <ul className="list-unstyled text-reset mt-3">
-            <li>
-              <Link href={`mailto:${column.extra.email}`}>{column.extra.email}</Link>
-            </li>
-            <li>
-              <Link href={`tel:${column.extra.phone}`}>{column.extra.phone}</Link>
-            </li>
-          </ul>
-        )}
+        
       </div>
     </div>
-  ))
+  ));
 };
 
-const FooterBottom = ({data}: {data: typeof dataFooter}) => {
+const FooterBottom = ({ data }: { data: typeof dataFooter }) => {
   return (
     <div className="d-md-flex align-items-center justify-content-between">
       <p className="mb-2 mb-lg-0">© 2024 FathSchool. All rights reserved.</p>
@@ -91,4 +99,3 @@ const FooterBottom = ({data}: {data: typeof dataFooter}) => {
     </div>
   );
 };
-

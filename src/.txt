@@ -1,3 +1,13 @@
 FOOTER - DONE
 BENEFITS - DONE
 TESTIMONIALS -DONE 
+FEATURES - DONE
+FAQ - DONE 
+NAVBAR - DONE
+
+Hero & Tutorial Section - !
+Headline - !
+Layouts - !
+
+
+! = Perlu diperbaiki

@@ -1,11 +1,25 @@
-import { TypeBenefits, TypeFooter, TypeTestimonials } from "@/types/data";
+import {
+  TypeBenefits,
+  TypeFaq,
+  TypeFeatures,
+  TypeFooter,
+  TyperTutorial,
+  TypeTestimonials,
+} from "@/types/data";
 
-import IconBenefits from "@/assets/img/icons/solid/computer.svg";
-import doodle1 from "@/assets/img/svg/doodle1.svg";
-import doodle3 from "@/assets/img/svg/doodle3.svg"
-import doodle9 from "@/assets/img/svg/doodle9.svg"
-import doodle10 from "@/assets/img/svg/doodle10.svg";
-import doodle11 from "@/assets/img/svg/doodle11.svg";
+import IconComputer from "@/assets/img/icons/solid/computer.svg";
+import IconCode from "@/assets/img/icons/solid/code.svg";
+import {
+  doodle1,
+  doodle10,
+  doodle11,
+  doodle3,
+  doodle4,
+  doodle5,
+  doodle7,
+  doodle8,
+  doodle9,
+} from "./images";
 
 // Data dummy untuk halaman utama
 const defaultHero = {
@@ -132,76 +146,282 @@ const defaultTestimonials = {
   ],
 };
 
+const MenuNavbar: { name: string; href: string }[] = [
+  {
+    name: "Beranda",
+    href: "/",
+  },
+  {
+    name: "Fitur",
+    href: "/#feature",
+  },
+  {
+    name: "FAQ",
+    href: "/#faq",
+  },
+  {
+    name: "Testimoni",
+    href: "/#testimoni",
+  },
+  {
+    name: "Blogs",
+    href: "/blogs",
+  }
+]
+
+// * TUTORIAL GUIDE
+const dataTutorial: TyperTutorial = {
+  name: "Tutorial",
+  headline: "Cara Kerja FATHSCHOOL",
+  designDoodle: [
+    {
+      name: "doodle5",
+      src: doodle5,
+      style: {
+        top: "-20%",
+        left: "-12%",
+      },
+    },
+    {
+      name: "doodle5",
+      src: doodle5,
+      style: {
+        top: "-25%",
+        right: "-12%",
+      },
+    },
+  ],
+  defaultData: [
+    {
+      name: "Tutorial",
+      title: "Download Aplikasi",
+      desc: "FathSchool tersedia di Playstore",
+    },
+  ],
+};
+
+const dataFaq: TypeFaq = {
+  name: "FAQ",
+  headline: "FAQ",
+  defaultData: [
+    {
+      question: "Apa itu FathSchool?",
+      answer:
+        "FathSchool adalah aplikasi berbasis web yang membantu sekolah mengelola data siswa, guru, jadwal pelajaran, pembayaran, hingga laporan akademik dalam satu platform yang mudah digunakan.",
+    },
+    {
+      question: "Siapa yang bisa menggunakan FathSchool?",
+      answer:
+        "FathSchool dirancang untuk digunakan oleh semua jenis sekolah, mulai dari SD, SMP, SMA, hingga lembaga pendidikan lainnya. Semua pihak seperti administrator, guru, siswa, dan orang tua dapat terhubung melalui platform ini.",
+    },
+    {
+      question: "Apakah FathSchool bisa diakses di Smartphone?",
+      answer:
+        "Jelas, FathSchool berbasis cloud dan dapat diakses melalui perangkat apapun, baik desktop maupun smartphone, selama terhubung dengan internet.",
+    },
+    {
+      question: "Apakah data sekolah aman?",
+      answer:
+        "Keamanan adalah prioritas kami. Semua data di FathSchool disimpan di server yang terenkripsi dan hanya dapat diakses oleh pengguna yang memiliki otorisasi.",
+    },
+    {
+      question: "Bagaimana jika membutuhkan bantuan teknis?",
+      answer:
+        "Tim dukungan kami siap membantu Anda kapan saja. Anda dapat menghubungi kami melalui email atau layanan chat langsung di aplikasi.",
+    },
+    {
+      question: "Lorem ipsum dolor sit amet?",
+      answer:
+        "Tim dukungan kami siap membantu Anda kapan saja. Anda dapat menghubungi kami melalui email atau layanan chat langsung di aplikasi.",
+    },
+  ],
+  designDoodle: [
+    {
+      name: "doodle7",
+      src: doodle7,
+      style: {
+        top: "-65%",
+        right: "-5%",
+      },
+    },
+    {
+      name: "doodle8",
+      src: doodle8,
+      style: {
+        top: "-20%",
+        left: "-12%",
+      },
+    },
+  ],
+};
+
+// * FEATURES
+const dataFeatures: TypeFeatures = {
+  name: "Features",
+  headline: "App Features",
+  desc: "Fitur Unggulan FathSchool",
+  defaultData: [
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-grape",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-green",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik.",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-orange",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-pink",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-blue",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-yellow",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-red",
+      },
+    },
+    {
+      name: "Laporan Akademik",
+      title: "Laporan Akademik",
+      icon: {
+        src: IconCode,
+        color: "bg-pale-purple",
+      },
+    },
+  ],
+  designDoodle: [
+    {
+      name: "doodle3",
+      src: doodle3,
+      style: {
+        top: "-20%",
+        left: "-12%",
+      },
+    },
+    {
+      name: "doodle4",
+      src: doodle4,
+      style: {
+        top: "-20%",
+        right: "-12%",
+      },
+    },
+  ],
+};
+
 // * Testimonials
 const dataTestimonials: TypeTestimonials = {
   name: "Testimonial",
-  headline: "Kata Mereka Tentang FathSchool.",
+  headline: "Kata Mereka Tentang FathSchool",
   desc: "Pelanggan yang Puas",
   defaultData: [
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-grape'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-grape",
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-green'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-green",
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-orange'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-orange",
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-pink'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-pink",
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-blue'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-blue",
     },
     {
       name: "John Doe",
       position: "CEO, FathSchool",
-      message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: 'bg-soft-yellow'
+      message:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      color: "bg-soft-yellow",
     },
   ],
   designDoodle: [
     {
-      name: 'doodle1',
+      name: "doodle1",
       src: doodle1,
       style: {
         top: "-8%",
-        left: "8%"
-      }
+        left: "8%",
+      },
     },
     {
-      name: 'doodle10',
+      name: "doodle10",
       src: doodle10,
       style: {
         top: "-45%",
-        left: "-17%"
-      }
+        left: "-17%",
+      },
     },
     {
-      name: 'doodle11',
+      name: "doodle11",
       src: doodle11,
       style: {
         top: "-40%",
-        right: "-15%"
-      }
-    }
-  ]
-}
+        right: "-15%",
+      },
+    },
+  ],
+};
 
 // * Footer
 const dataFooter: TypeFooter = {
@@ -269,26 +489,26 @@ const dataFooter: TypeFooter = {
 };
 
 // * Benefits
-const dataBenefits : TypeBenefits = {
-  name: 'Mengapa Fathschool?',
+const dataBenefits: TypeBenefits = {
+  name: "Mengapa Fathschool?",
   headline: "Bergabung Bersama Kami",
-  desc: "Berikut ini Beberapa Alasan Mengapa Pelanggan Kami Memilih Fathschool.",
+  desc: "Beberapa Alasan Mengapa Pelanggan Kami Memilih Fathschool.",
   designDoodle: [
     {
-      name: 'doodle3',
+      name: "doodle3",
       src: doodle3,
       style: {
         top: "-20%",
-        right: "-12%"
-      }
+        right: "-12%",
+      },
     },
     {
-      name: 'doodle9',
+      name: "doodle9",
       src: doodle9,
       style: {
         top: "5%",
-        left: "-17%"
-      }
+        left: "-17%",
+      },
     },
   ],
   defaultData: [
@@ -297,45 +517,48 @@ const dataBenefits : TypeBenefits = {
       title: "Aman & Berbasis Cloud",
       desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
       icon: {
-        src: IconBenefits,
+        src: IconComputer,
         color: "bg-pale-grape",
-      }
+      },
     },
     {
       name: "John Doe",
       title: "Aman & Berbasis Cloud",
       desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
       icon: {
-        src: IconBenefits,
+        src: IconComputer,
         color: "bg-pale-green",
-      }
+      },
     },
     {
       name: "John Doe",
       title: "Aman & Berbasis Cloud",
       desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
       icon: {
-        src: IconBenefits,
+        src: IconComputer,
         color: "bg-pale-pink",
-      }
+      },
     },
     {
       name: "John Doe",
       title: "Aman & Berbasis Cloud",
       desc: "Data sekolah tersimpan dengan aman dan mudah diakses",
       icon: {
-        src: IconBenefits,
+        src: IconComputer,
         color: "bg-pale-yellow",
-      }
+      },
     },
-  ]
-}
+  ],
+};
 
 export {
+  MenuNavbar,
   dataFooter,
   dataTestimonials,
   dataBenefits,
-  
+  dataFeatures,
+  dataTutorial,
+  dataFaq,
   defaultHero,
   defaultFeature,
   defaultFAQ,

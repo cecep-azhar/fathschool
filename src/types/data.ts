@@ -1,7 +1,7 @@
 export interface TypeBase {
   name: string;
   headline: string;
-  desc: string;
+  desc?: string | React.ReactNode;
 }
 
 export interface TypeDesignDoodle {
@@ -15,6 +15,37 @@ export interface TypeDesignDoodle {
   };
 }
 
+// * TYPE TUTORIAL
+export interface TyperTutorial extends TypeBase {
+  designDoodle: TypeDesignDoodle[];
+  defaultData: {
+    name: string;
+    title: string;
+    desc: string;
+  }[];
+}
+
+export interface TypeFaq extends TypeBase {
+  designDoodle: TypeDesignDoodle[];
+  defaultData: {
+    answer: string;
+    question: string;
+  }[];
+}
+
+// * TYPE FEATURES
+export interface TypeFeatures extends TypeBase {
+  designDoodle: TypeDesignDoodle[];
+  defaultData: {
+    name: string;
+    title: string;
+    desc?: string;
+    icon: {
+      src: string;
+      color: string;
+    }
+  }[];
+}
 
 // * TYPE FOOTER 
 export interface TypeFooter extends TypeBase {

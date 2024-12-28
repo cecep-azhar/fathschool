@@ -1,11 +1,12 @@
 import React from 'react'
 
 interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {
-  as?: string
+  as?: string,
+  padding?: string
 }
 
-export const Container = ({ children, className }: Props): React.ReactNode => {
+export const Container = ({ children, className, padding ="pb-14 pt-18 pt-lg-20" }: Props): React.ReactNode => {
   return (
-    <div className={`container pt-13 pt-md-15 pb-7 ${className}`}>{children}</div>
+    <div className={`container ${padding} ${className}`}>{children}</div>
   )
 }
