@@ -2,9 +2,7 @@ import { dataFooter } from "@/data";
 import { Container } from "./Container";
 import Link from "next/link";
 
-export const Footer: React.FC<
-  React.HtmlHTMLAttributes<HTMLDivElement>
-> = () => {
+export const Footer: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
   return (
     <>
       <footer className="bg-dark text-inverse">
@@ -63,12 +61,12 @@ const FooterBody = ({ data }: { data: typeof dataFooter }) => {
                 </li>
                 {column.extra && (
                   <>
-                    <li>
+                    <li key={column.extra.email}>
                       <Link href={`mailto:${column.extra.email}`}>
                         {column.extra.email}
                       </Link>
                     </li>
-                    <li>
+                    <li key={column.extra.phone}>
                       <Link href={`tel:${column.extra.phone}`}>
                         {column.extra.phone}
                       </Link>

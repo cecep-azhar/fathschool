@@ -5,12 +5,16 @@ import IconCode from "@/assets/img/icons/solid/code.svg";
 import ImageBenefits from "@/assets/img/content/Benefits.jpg";
 import ImageDevice from "@/assets/img/content/Device.png";
 import ImageHero from "@/assets/img/content/Hero.png";
+import ImageGooglePlay from "@/assets/img/photos/button-google-play.svg";
 
 import LogoDark from "@/assets/img/content/Logo Dark.png";
 import LogoLight from "@/assets/img/content/Logo Light.png";
 
 // BACKGROUND
-import bgFaq from "@/assets/img/photos/bg22.png";
+import bgFaq from "@/assets/img/photos/bg23.png";
+
+import IlustrationI5 from "@/assets/img/illustrations/i5.png";
+import Illustration404 from "@/assets/img/illustrations/404@2x.png";
 
 // POSTER VIDEO
 import Poster from "@/assets/img/content/Poster.png";
@@ -29,6 +33,9 @@ import doodle10 from "@/assets/img/svg/doodle10.svg";
 import doodle11 from "@/assets/img/svg/doodle11.svg";
 
 export {
+  IlustrationI5,
+  Illustration404,
+  ImageGooglePlay,
   ImageBenefits,
   ImageDevice,
   ImageHero,

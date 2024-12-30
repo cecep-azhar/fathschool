@@ -1,6 +1,8 @@
+import { ImageProps, StaticImageData } from "next/image";
+
 export interface TypeBase {
   name: string;
-  headline: string;
+  headline?: string;
   desc?: string | React.ReactNode;
 }
 
@@ -8,11 +10,21 @@ export interface TypeDesignDoodle {
   name: string;
   src: string;
   style?: {
+    width?: string;
+    height?: string;
     top?: string;
     left?: string;
     right?: string;
     bottom?: string;
   };
+  dataCue?: string;
+  dataDelay?: string;
+}
+
+// * TYPE HERO
+export interface TypeHero extends TypeBase {
+  designDoodle: TypeDesignDoodle[];
+  imageHero: StaticImageData;
 }
 
 // * TYPE TUTORIAL

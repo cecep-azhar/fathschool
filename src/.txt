@@ -1,3 +1,4 @@
+HERO - DONE
 FOOTER - DONE
 BENEFITS - DONE
 TESTIMONIALS -DONE 
@@ -5,8 +6,8 @@ FEATURES - DONE
 FAQ - DONE 
 NAVBAR - DONE
 
-Hero & Tutorial Section - !
-Headline - !
+PAGE NOT FOUND - !
+Tutorial Section - !
 Layouts - !
 
 

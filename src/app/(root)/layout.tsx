@@ -1,12 +1,13 @@
-import { Footer } from "@/components/layouts/Footer";
-import { Navbar } from "@/components/layouts/Navbar";
+import { Footer, Navbar, Providers } from "@/components/layouts";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <section className="content-wrapper">
-      <Navbar />
-      {children}
-      <Footer />
-    </section>
+    <Providers>
+      <section className="content-wrapper">
+        <Navbar />
+        {children}
+        <Footer />
+      </section>
+    </Providers>
   );
 }

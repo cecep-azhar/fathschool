@@ -5,7 +5,7 @@ interface Props extends TypeBase {
   doodleImages: TypeDesignDoodle[];
 }
 
-export const Headline: React.FC<Props> = ({ doodleImages, headline, desc }) => {
+export const Headline: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({ doodleImages, headline, desc }) => {
   return (
     <div className="row text-center">
       <div className="col-md-11 col-lg-10 col-xl-9 col-xxl-8 text-center mx-auto position-relative">
@@ -14,9 +14,9 @@ export const Headline: React.FC<Props> = ({ doodleImages, headline, desc }) => {
             key={index}
             src={item.src}
             style={item.style}
-            className="w-16 position-absolute d-none d-lg-block"
-            data-delay="1800"
-            alt="image"
+            className={`position-absolute d-none d-lg-block ${item.style?.height} ${item.style?.width}`}
+            data-delay={item.dataDelay}
+            alt="svg"
             width={100}
             height={100}
           />

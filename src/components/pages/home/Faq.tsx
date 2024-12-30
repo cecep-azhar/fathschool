@@ -3,7 +3,7 @@ import { dataFaq } from "@/data";
 import { bgFaq, Poster } from "@/data/images";
 import { AccordionGroup } from "@/components/fragments/Accordion";
 
-export function FaqSection(): React.ReactNode {
+export function Faq(): React.ReactNode {
   return (
     <section id="faq" className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content" data-image-src={bgFaq.src}>
       <div className="container py-14 pt-md-16 pt-lg-0 pb-md-17 position-relative" style={{ zIndex: 2 }}>
@@ -40,26 +40,14 @@ const Headline = ({ data }: { data: typeof dataFaq }) => {
   return (
     <div className="position-relative">
       {data.designDoodle.map((doodle, index) => (
-        <Image
-          key={index}
-          src={doodle.src}
-          style={doodle.style}
-          className="w-14 position-absolute d-none d-lg-block"
-          data-delay="1800"
-          alt="image"
-          width={100}
-          height={100}
-        />
+        <Image key={index} src={doodle.src} style={doodle.style} className="w-14 position-absolute d-none d-lg-block" data-delay="1800" alt="image" width={100} height={100}/>
       ))}
 
       <h2 className="fs-16 text-uppercase text-muted mb-3 text-center">
         {data.headline}
       </h2>
-      <h3 className="display-3 mb-11 px-lg-8 px-xl-11 text-center">
-        Jika Anda tidak melihat{" "}
-        <span className="text-gradient gradient-7">Jawaban</span> untuk
-        pertanyaan Anda, Anda dapat mengirim email kepada kami dari formulir
-        kontak kami.
+      <h3 className="display-3 mb-11 px-lg-8 px-xl-8 text-center">
+        Jika <span className="text-gradient gradient-7">Pertayaan</span> Anda Belum Terjawab, Kirim Email Melalui Formulir Kontak Kami
       </h3>
     </div>
   );
@@ -67,14 +55,8 @@ const Headline = ({ data }: { data: typeof dataFaq }) => {
 
 export const Video = () => {
   return (
-    <div className="mt-lg-n20 mt-xl-n22 mb-14 rounded-xl border-3 shadow-lg">
-      <video
-        poster={Poster.src}
-        className="player"
-        playsInline
-        controls
-        preload="none"
-      >
+    <div className="mt-lg-n20 mt-xl-n22 mb-14 rounded-xl shadow-xl">
+      <video poster={Poster.src} className="player" preload="none">
         <source src="/assets/media/Introduce FathSchool.mp4" type="video/mp4" />
       </video>
     </div>

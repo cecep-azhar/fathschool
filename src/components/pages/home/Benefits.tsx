@@ -2,18 +2,27 @@ import { Container } from "@/components/layouts/Container";
 import { Headline } from "@/components/fragments/Headline";
 import { dataBenefits } from "@/data";
 import { ImageBenefits } from "@/data/images";
+import { BenefitItem } from "@/components/elements/BenefitItem";
 import Image from "next/image";
 
-export function BenefitsSection(): React.ReactNode {
+export function Benefits(): React.ReactNode {
   return (
     <Container>
-      <div className="row border">
-        <Headline doodleImages={dataBenefits.designDoodle} headline={dataBenefits.headline} desc={dataBenefits.desc} name={dataBenefits.name} />
-      </div>
+      <Headline
+        doodleImages={dataBenefits.designDoodle}
+        headline={dataBenefits.headline}
+        desc={
+          <>
+            Beberapa Alasan Mengapa Pelanggan Kami Memilih{" "}
+            <span className="text-gradient gradient-7">FathSchool</span>.
+          </>
+        }
+        name={dataBenefits.name}
+      />
 
       <div className="row d-flex align-items-start mt-8">
         <Device />
-        <Benefits data={dataBenefits.defaultData} />
+        <BenefitsItems data={dataBenefits.defaultData} />
       </div>
     </Container>
   );
@@ -21,29 +30,36 @@ export function BenefitsSection(): React.ReactNode {
 
 const Device = () => {
   return (
-    <div className="col-lg-6 position-lg-sticky" style={{ top: "4rem" }}>
+    <div
+      className="col-lg-6 position-lg-sticky"
+      style={{ top: "4rem" }}
+      data-cues="slideInLeft"
+      data-delay="300"
+    >
       <figure>
-        <Image src={ImageBenefits.src} alt="image" loading="lazy" width={400} height={400} quality={100}/>
+        <Image
+          src={ImageBenefits.src}
+          alt="image"
+          loading="lazy"
+          width={400}
+          height={400}
+          quality={100}
+        />
       </figure>
     </div>
   );
 };
 
-const Benefits = ({ data }: { data: typeof dataBenefits.defaultData }) => {
+const BenefitsItems = ({ data }: { data: typeof dataBenefits.defaultData }) => {
   return (
-    <div className="col-lg-5 ms-auto mt-12 mt-lg-0">
+    <div
+      className="col-lg-5 ms-auto mt-12 mt-lg-0"
+      data-cues="slideInRight"
+      data-group="benefits"
+      data-delay="600"
+    >
       {data.map((item, index) => (
-        <div key={index} className="d-flex flex-row mb-8">
-          <div>
-            <div className={`${item.icon.color} svg-bg svg-bg-lg rounded-xl me-5`}>
-              <Image src={item.icon.src} className="h-12 w-8 icon-svg solid text-navy" alt="image" loading="lazy" width={100} height={100}/>
-            </div>
-          </div>
-          <div>
-            <h4 className="fs-20">{item.name}</h4>
-            <p>{item.desc}</p>
-          </div>
-        </div>
+        <BenefitItem key={index} data={item} />
       ))}
     </div>
   );

@@ -31,7 +31,7 @@ export const AccordionGroup: React.FC<AccordionGroupProps> = ({ id, data, classN
   );
 };
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ id, index, question, answer }: AccordionItemProps) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ id, index, question, answer }) => {
   return (
     <div className="card accordion-item shadow-lg">
       <div className="card-header" id={`${id}-heading-${index}`}>

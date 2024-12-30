@@ -7,15 +7,16 @@ import Image from "next/image";
 export function TutorialGuide(): React.ReactNode {
   return (
     <Container>
+      
       <Headline
         name={dataTutorial.name}
         headline={dataTutorial.headline}
         doodleImages={dataTutorial.designDoodle}
         desc={
           <>
-            Unduh aplikasinya, buat profil dan tadaa,{" "}
+            Unduh Aplikasinya, Buat Profil dan Tadaa,{" "}
             <span className="text-gradient gradient-7">Fathschool</span> siap
-            digunakan!
+            Digunakan!
           </>
         }
       />
@@ -23,18 +24,8 @@ export function TutorialGuide(): React.ReactNode {
       <div className="row mb-lg-20 mb-xl-23">
         <div className="col-xxl-11 mx-auto">
           <div className="row gy-10 gy-lg-0 text-center d-flex align-items-center">
+            <ImageContent />
 
-            <div className="col-md-6 col-lg-4 mx-auto mb-n10 mb-lg-0">
-              <figure className="mx-auto">
-                <Image
-                  src={ImageDevice.src}
-                  alt="image"
-                  width={800}
-                  height={800}
-                />
-              </figure>
-            </div>
-            
             <div className="w-100 d-lg-none"></div>
 
             <div className="col-md-6 col-lg-4 order-lg-first">
@@ -56,6 +47,7 @@ export function TutorialGuide(): React.ReactNode {
                 </p>
               </div>
             </div>
+
             <div className="col-md-6 col-lg-4">
               <div className="mb-8">
                 <span className="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">
@@ -78,10 +70,27 @@ export function TutorialGuide(): React.ReactNode {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </Container>
   );
 }
+
+const ImageContent = () => {
+  return (
+    <div className="col-md-6 col-lg-4 mx-auto mb-n10 mb-lg-0">
+      <figure className="mx-auto">
+        <Image
+          src={ImageDevice.src}
+          blurDataURL={ImageDevice.blurDataURL}
+          data-cue="slideInUp"
+          data-delay="700"
+          alt="image"
+          width={800}
+          height={800}
+        />
+      </figure>
+    </div>
+  );
+};
