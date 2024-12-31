@@ -1,4 +1,4 @@
-import { dataFaq } from "@/data";
+import { Faq } from "@/types/response";
 
 type AccordionItemProps = {
   id: string;
@@ -9,7 +9,7 @@ type AccordionItemProps = {
 
 type AccordionGroupProps = {
   id: string;
-  data: typeof dataFaq.defaultData;
+  data: Faq['data'];
   className?: string;
 };
 

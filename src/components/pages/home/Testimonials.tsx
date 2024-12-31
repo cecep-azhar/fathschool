@@ -1,37 +1,29 @@
-import { CardTestimonial } from "@/components/elements/CardTestimonial";
-import { Headline } from "@/components/fragments/Headline";
-import { Container } from "@/components/layouts/Container";
-import { dataTestimonials } from "@/data";
+"use client";
 
-export function Testimonial(): React.ReactNode {
+import { CardTestimonial, Headline } from "@/components/fragments";
+import { Container } from "@/components/layouts/Container";
+import { dataDefault, dataTestimonials } from "@/data";
+import type { Testimonials } from "@/types/response";
+
+export function Testimonial({data}: {data: Testimonials | undefined}): React.ReactNode {
+
+  if (!data) {
+    data = dataDefault.data.sections.data.testimonials;
+  }
+
   return (
-    <Container>
-      <div id="testimoni">
+    <section id="testimoni">
+      <Container>
         <Headline
           doodleImages={dataTestimonials.designDoodle}
-          headline={dataTestimonials.headline}
-          desc={
-            <>
-              Kata Mereka Tentang <span className="text-gradient gradient-7">FathSchool</span>
-            </>
-          }
-          name={dataTestimonials.name}
+          headline={data.title}
+          desc={data.description}
         />
-      </div>
 
-      <div className="grid mt-8">
-        <Testimonials data={dataTestimonials} />
-      </div>
-    </Container>
+        <div className="row isotope gy-6 mt-8">
+          {data.data.map((item) => <CardTestimonial key={item.id} data={item} />)}
+        </div>
+      </Container>
+    </section>
   );
 }
-
-const Testimonials = ({ data }: { data: typeof dataTestimonials }) => {
-  return (
-    <div className="row isotope gy-6">
-      {data.defaultData.map((testimonial, index) => (
-        <CardTestimonial key={index} data={testimonial} />
-      ))}
-    </div>
-  );
-};

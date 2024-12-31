@@ -1,28 +1,28 @@
 import { FeatureItem } from "@/components/elements/FeatureItem";
-import { Headline } from "@/components/fragments/Headline";
+import { Headline } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
-import { dataFeatures } from "@/data";
+import { dataDefault, dataFeatures } from "@/data";
+import { AppFeature } from "@/types/response";
 
-export function Features(): React.ReactNode {
+export function Features({ data }: { data: AppFeature | undefined }): React.ReactNode {
+
+  if (!data) {
+    data = dataDefault.data.sections.data.app_feature;
+  }
+
   return (
-    <section id="feature" className="wrapper bg-light">
+    <section id="feature">
       <Container padding="pt-18 pt-md-22">
         <Headline
           doodleImages={dataFeatures.designDoodle}
-          headline={dataFeatures.headline}
-          name={dataFeatures.name}
-          desc={
-            <>
-              Fitur Unggulan{" "}
-              <span className="text-gradient gradient-7">FathSchool</span>
-            </>
-          }
+          headline={data.title}
+          desc={data.description}
         />
 
         <div className="row mt-8">
           <div className="col-xxl-11 mx-auto">
             <div className="row gx-md-8 gy-10 text-center">
-              {dataFeatures.defaultData.map((item, index) => (
+              {data.data.map((item, index) => (
                 <FeatureItem key={index} data={item} />
               ))}
             </div>

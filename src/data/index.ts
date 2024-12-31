@@ -1,8 +1,31 @@
-import { TypeBenefits, TypeFaq, TypeFeatures, TypeFooter, TypeHero, TyperTutorial, TypeTestimonials} from "@/types/data";
-import { doodle1, doodle10, doodle11, doodle2, doodle3, doodle4, doodle5, doodle6, doodle7, doodle8, doodle9, ImageHero} from "./images";
+import {
+  TypeBenefits,
+  TypeFaq,
+  TypeFeatures,
+  TypeFooter,
+  TypeHero,
+  TyperTutorial,
+  TypeTestimonials,
+} from "@/types/data";
+import {
+  doodle1,
+  doodle10,
+  doodle11,
+  doodle2,
+  doodle3,
+  doodle4,
+  doodle5,
+  doodle6,
+  doodle7,
+  doodle8,
+  doodle9,
+  ImageBenefits,
+  ImageHero,
+} from "./images";
 
 import IconComputer from "@/assets/img/icons/solid/computer.svg";
 import IconCode from "@/assets/img/icons/solid/code.svg";
+import { ResponseLandingPage } from "@/types/response";
 
 // * NAVBAR
 const MenuNavbar: { name: string; href: string }[] = [
@@ -106,7 +129,7 @@ const dataTutorial: TyperTutorial = {
 };
 
 // * FAQ
-const dataFaq: TypeFaq = {
+const dataFaq = {
   name: "FAQ",
   headline: "Tanya Jawab Umum",
   defaultData: [
@@ -257,46 +280,46 @@ const dataTestimonials: TypeTestimonials = {
   desc: "Kata Mereka Tentang FathSchool",
   defaultData: [
     {
+      id: 1,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-grape",
     },
     {
+      id: 2,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-green",
     },
     {
+      id: 3,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-orange",
     },
     {
+      id: 4,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-pink",
     },
     {
+      id: 5,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-blue",
     },
     {
+      id: 6,
       name: "John Doe",
       position: "CEO, FathSchool",
       message:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      color: "bg-soft-yellow",
     },
   ],
   designDoodle: [
@@ -358,7 +381,12 @@ const dataFooter: TypeFooter = {
     },
     {
       title: "Hubungi Kami",
-      items: [{ name: "Moonshine St. 14/05 Light City, London, United Kingdom", link: "#" }],
+      items: [
+        {
+          name: "Moonshine St. 14/05 Light City, London, United Kingdom",
+          link: "#",
+        },
+      ],
       extra: {
         email: "hi@FathSchool.com",
         phone: "0851-6172-1727",
@@ -469,4 +497,178 @@ export {
   dataFeatures,
   dataTutorial,
   dataFaq,
+};
+
+// -------------------------------------------------------------------- //
+
+export const dataDefault: ResponseLandingPage = {
+  status: true,
+  message: "Page retrieved successfully.",
+  data: {
+    page_name: "landing_page",
+    sections: {
+      data: {
+        hero: {
+          title: "Sekolah Ku, Sudah Pakai FathSchool?",
+          description:
+            "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
+          device_image: "01JGBDBKP1FNSNJECGF905NFGC.png",
+          playstore_image: "01JGBDBKPAGT8NTBSCY02PRHBF.svg",
+          playstore_link: "#",
+        },
+        app_feature: {
+          title: "App Features",
+          description: "Fitur Unggulan FathSchool",
+          data: [
+            {
+              image: "01JGB8D938ARN836W5ZEZRFZJK.svg",
+              description: "tes",
+            },
+            {
+              image: "01JGB8D93EBC5N95H3HMYCBPPT.svg",
+              description: "tes 2",
+            },
+          ],
+        },
+        tutorial: {
+          title: "Cara Kerja Fathschool",
+          description:
+            "Unduh aplikasinya, buat profil dan tadaa, Fathschool siap digunakan!",
+          device_tutorial: "01JGBADGD5KRV2VP0XQP34DZFG.png",
+          data: [
+            {
+              number: "01",
+              title: "Download Aplikasi",
+              description: "FathSchool tersedia di Playstore",
+            },
+            {
+              number: "02",
+              title: "Pendaftaran Cepat",
+              description:
+                "Daftar dengan mudah dan cepat untuk memulai pengalaman belajar Anda.",
+            },
+            {
+              number: "03",
+              title: "Lacak Pengeluaran Anda",
+              description:
+                "Pantau pengeluaran Anda dengan mudah dan tetap dalam kendali keuangan.",
+            },
+            {
+              number: "04",
+              title: "Kendalikan Segalanya",
+              description:
+                "Dapatkan kontrol penuh atas keuangan Anda dan buat keputusan yang lebih baik.",
+            },
+          ],
+        },
+        faq: {
+          video: '/assets/media/Introduce FathSchool.mp4',
+          title: "FAQ",
+          description:
+            "Jika Anda tidak melihat jawaban untuk pertanyaan Anda, Anda dapat mengirim email kepada kami dari formulir kontak kami.",
+          data: [
+            {
+              question: "Apa itu FathSchool?",
+              answer:
+                "FathSchool adalah aplikasi berbasis web yang membantu sekolah mengelola data siswa, guru, jadwal pelajaran, pembayaran, hingga laporan akademik dalam satu platform yang mudah digunakan.",
+            },
+            {
+              question: "Apakah Fathschool bisa diakses di smartphone?",
+              answer:
+                "Jelas, FathSchool berbasis cloud dan dapat diakses melalui perangkat apapun, baik desktop maupun smartphone, selama terhubung dengan internet.",
+            },
+            {
+              question: "Siapa yang bisa menggunakan FathSchool?",
+              answer:
+                "FathSchool dirancang untuk digunakan oleh semua jenis sekolah, mulai dari SD, SMP, SMA, hingga lembaga pendidikan lainnya. Semua pihak seperti administrator, guru, siswa, dan orang tua dapat terhubung melalui platform ini.",
+            },
+            {
+              question: "Apakah data sekolah aman?",
+              answer:
+                "Keamanan adalah prioritas kami. Semua data di FathSchool disimpan di server yang terenkripsi dan hanya dapat diakses oleh pengguna yang memiliki otorisasi.",
+            },
+            {
+              question: "Bagaimana jika membutuhkan dukungan teknis?",
+              answer:
+                "Tim dukungan kami siap membantu Anda kapan saja. Anda dapat menghubungi kami melalui email atau layanan chat langsung di aplikasi.",
+            },
+          ],
+        },
+        benefits: {
+          title: "Mengapa Fathschool?",
+          description:
+            "Berikut ini beberapa alasan mengapa pelanggan kami memilih Fathschool.",
+          device_benefits: ImageBenefits.src,
+          data: [
+            {
+              id: 1,
+              icon: IconComputer,
+              title: "Mudah Digunakan",
+              description: "Antarmuka ramah pengguna untuk semua pihak.",
+            },
+            {
+              id: 2,
+              icon: IconComputer,
+              title: "Aman & Berbasis Cloud",
+              description:
+                "Aman & Berbasis Cloud Data sekolah tersimpan dengan aman dan mudah diakses.",
+            },
+            {
+              id: 3,
+              icon: IconComputer,
+              title: "Terintegrasi",
+              description: "Semua kebutuhan sekolah dalam satu aplikasi.",
+            },
+            {
+              id: 4,
+              icon: IconComputer,
+              title: "Dukungan Teknis",
+              description: "Tim profesional siap membantu Anda kapan saja.",
+            },
+          ],
+        },
+        testimonials: {
+          title: "Pelanggan yang Puas",
+          description: "Kata Mereka Tentang FathSchool.",
+          data: [
+            {
+              id: 1,
+              name: "Jafar Awalaan",
+              position: "Pelajar",
+              message:
+                "Sejak menggunakan FathSchool, pengelolaan data siswa menjadi jauh lebih terorganisir. Guru dan staf kami merasa sangat terbantu dengan fitur otomatisasinya. Terima kasih FathSchool!",
+            },
+            {
+              id: 2,
+              name: "Bulan Ramdani",
+              position: "Teacher",
+              message:
+                "Sistem pembayaran digital di FathSchool sangat memudahkan kami dalam memantau administrasi keuangan sekolah. Orang tua siswa juga lebih mudah membayar dengan transparansi penuh.",
+            },
+            {
+              id: 3,
+              name: "Dwi Kuncoro",
+              position: "Developer",
+              message:
+                "FathSchool adalah solusi terbaik untuk sekolah modern. Saya bisa mengakses laporan akademik siswa secara real-time, kapan saja dan di mana saja. Sangat praktis!",
+            },
+            {
+              id: 4,
+              name: "Eka Prasetya",
+              position: "Pelajar",
+              message:
+                "Dengan FathSchool, komunikasi antara guru, orang tua, dan siswa menjadi lebih lancar. Notifikasi otomatis untuk jadwal dan laporan sangat membantu kami dalam menjaga keteraturan.",
+            },
+            {
+              id: 5,
+              name: "Dede Kurniawan",
+              position: "Kepala Sekolah",
+              message:
+                "FathSchool memberikan solusi modern yang membuat pengelolaan sekolah menjadi lebih efisien. Semua data penting tersedia hanya dengan beberapa klik, sehingga saya dapat fokus pada pengembangan sekolah.",
+            },
+          ],
+        },
+      },
+    },
+  },
 };

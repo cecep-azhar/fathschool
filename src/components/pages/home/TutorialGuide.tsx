@@ -1,4 +1,4 @@
-import { Headline } from "@/components/fragments/Headline";
+import { Headline } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
 import { dataTutorial } from "@/data";
 import { ImageDevice } from "@/data/images";
@@ -12,13 +12,7 @@ export function TutorialGuide(): React.ReactNode {
         name={dataTutorial.name}
         headline={dataTutorial.headline}
         doodleImages={dataTutorial.designDoodle}
-        desc={
-          <>
-            Unduh Aplikasinya, Buat Profil dan Tadaa,{" "}
-            <span className="text-gradient gradient-7">Fathschool</span> siap
-            Digunakan!
-          </>
-        }
+        desc='Unduh Aplikasinya, Buat Profil dan Tadaa, Fathschool siap Digunakan!'
       />
 
       <div className="row mb-lg-20 mb-xl-23">

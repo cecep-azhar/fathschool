@@ -1,9 +1,10 @@
-import { ImageProps, StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import { ResponseTypeFaq, ResponseTypeTestimonials } from "./response";
 
 export interface TypeBase {
-  name: string;
+  name?: string;
   headline?: string;
-  desc?: string | React.ReactNode;
+  desc?: string;
 }
 
 export interface TypeDesignDoodle {
@@ -39,10 +40,7 @@ export interface TyperTutorial extends TypeBase {
 
 export interface TypeFaq extends TypeBase {
   designDoodle: TypeDesignDoodle[];
-  defaultData: {
-    answer: string;
-    question: string;
-  }[];
+  defaultData: ResponseTypeFaq[];
 }
 
 // * TYPE FEATURES
@@ -80,12 +78,7 @@ export interface TypeFooter extends TypeBase {
 // * TYPE TESTIMONIAL
 export interface TypeTestimonials extends TypeBase {
   designDoodle: TypeDesignDoodle[]
-  defaultData: {
-    name: string;
-    position: string;
-    message: string;
-    color: string;
-  }[];
+  defaultData: ResponseTypeTestimonials[];
 }
 
 // * TYPE BENEFITS

@@ -1,0 +1,12 @@
+.imageHover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageHover-container .image {
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.imageHover-container:hover .image {
+  filter: brightness(50%);
+}

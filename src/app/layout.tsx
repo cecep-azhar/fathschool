@@ -4,6 +4,7 @@ import "@/assets/css/style.css";
 import "@/assets/css/colors/grape.css";
 import "@/assets/css/fonts/space.css";
 import "@/app/globals.css";
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export const metadata = {
   title: "Fath School",

@@ -2,10 +2,10 @@ import { ImageGooglePlay } from "@/data/images";
 import Image from "next/image";
 import Link from "next/link";
 
-export const ButtonGooglePlay: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
+export const ButtonGooglePlay: React.FC<{ href: string } & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ href }) => {
   return (
     <span>
-      <Link href="#">
+      <Link href={href}>
         <Image
           src={ImageGooglePlay}
           blurDataURL={ImageGooglePlay.blurDataURL}

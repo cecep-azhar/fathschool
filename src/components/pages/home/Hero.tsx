@@ -1,9 +1,15 @@
+import Image from "next/image";
 import { ButtonGooglePlay } from "@/components/elements/ButtonGooglePlay";
 import { Polygon } from "@/components/elements/Polygon";
-import { dataHero } from "@/data";
-import Image from "next/image";
+import { dataDefault, dataHero } from "@/data";
+import type { Hero } from "@/types/response";
 
-export function Hero(): React.ReactNode {
+export function Hero({ data }: { data: Hero | undefined }): React.ReactNode {
+
+  if (!data) {
+    data = dataDefault.data.sections.data.hero  ;
+  }
+
   return (
     <section id="home" className="wrapper image-wrapper bg-overlay bg-overlay-light-600"
       style={{
@@ -31,16 +37,13 @@ export function Hero(): React.ReactNode {
               />
             ))}
 
-            <h1 className="display-1 fs-50 mb-4">
-              Sekolah Ku, Sudah Pakai{" "}
-              <span className="text-gradient gradient-7">FathSchool</span>
-            </h1>
-            <p className="lead fs-24 lh-sm mb-7">{dataHero.desc}</p>
+            <h1 className="display-1 fs-50 mb-4">{data.title}</h1>
+            <p className="lead fs-24 lh-sm mb-7">{data.description}</p>
 
-            <ButtonGooglePlay />
+            <ButtonGooglePlay href={data.playstore_link} />
           </div>
 
-          <ImageContent data={dataHero.imageHero} />
+          <ImageContent data={data.device_image} />
         </div>
       </div>
 
@@ -49,19 +52,13 @@ export function Hero(): React.ReactNode {
   );
 }
 
-const ImageContent = ({ data }: { data: typeof dataHero.imageHero }) => {
+const ImageContent = ({ data }: { data: string }) => {
+  const ImageUrl = process.env.NEXT_PUBLIC_STORAGE_URL?.concat(data) || dataDefault.data.sections.data.hero.device_image;
+
   return (
     <div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" data-cue="fadeIn" data-delay="2000">
       <figure>
-        <Image
-          src={data.src}
-          blurDataURL={data.blurDataURL}
-          alt="Image"
-          quality={100}
-          width={500}
-          height={500}
-          loading="lazy"
-        />
+        <Image src={ImageUrl} alt="Image" quality={100} width={500} height={500} loading="lazy"/>
       </figure>
     </div>
   );
