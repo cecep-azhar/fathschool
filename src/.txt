@@ -10,8 +10,9 @@ PAGE NOT FOUND - DONE
 DETAIL BLOG - !
 ANIMASI GANTI FRAMER MOTION - !
 VIDEO FAQ ERROR
-TUTORIAL masi dinamis
-BUAT DATA DOODLE
+
+Ketika data ada atau tidak ada
+Url Image 
 
 Tutorial Section - !
 Layouts - !

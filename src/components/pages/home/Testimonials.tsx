@@ -2,20 +2,16 @@
 
 import { CardTestimonial, Headline } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
-import { dataDefault, dataTestimonials } from "@/data";
+import { dataDesign } from "@/data";
 import type { Testimonials } from "@/types/response";
 
-export function Testimonial({data}: {data: Testimonials | undefined}): React.ReactNode {
-
-  if (!data) {
-    data = dataDefault.data.sections.data.testimonials;
-  }
+export function Testimonial({data}: {data: Testimonials}): React.ReactNode {
 
   return (
     <section id="testimoni">
       <Container>
         <Headline
-          doodleImages={dataTestimonials.designDoodle}
+          doodleImages={dataDesign.testimonial}
           headline={data.title}
           desc={data.description}
         />

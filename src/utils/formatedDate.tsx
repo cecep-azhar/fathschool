@@ -3,7 +3,7 @@ import "moment/locale/id";
 
 moment.locale("id");
 
-export function formatedDate(date: string | Date): string {
+export function FormatedDate(date: string | Date): string {
     const now = moment();
     const inputDate = moment(date);
 

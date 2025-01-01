@@ -1,4 +1,3 @@
-import { Faq } from "@/types/response";
 
 type AccordionItemProps = {
   id: string;
@@ -9,7 +8,10 @@ type AccordionItemProps = {
 
 type AccordionGroupProps = {
   id: string;
-  data: Faq['data'];
+  data: {
+    question: string;
+    answer: string;
+  }[];
   className?: string;
 };
 

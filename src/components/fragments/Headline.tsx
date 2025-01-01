@@ -1,4 +1,5 @@
 import { TypeBase, TypeDesignDoodle } from "@/types/data";
+import { HighlightKeyword } from "@/utils/HighlightKeyword";
 import Image from "next/image";
 
 interface Props extends TypeBase {
@@ -6,6 +7,7 @@ interface Props extends TypeBase {
 }
 
 export const Headline: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = ({ doodleImages, headline, desc }) => {
+
   return (
     <div className="row text-center">
       <div className="col-md-11 col-lg-10 col-xl-9 col-xxl-8 text-center mx-auto position-relative">
@@ -22,7 +24,7 @@ export const Headline: React.FC<Props & React.HTMLAttributes<HTMLDivElement>> = 
           />
         ))}
         <h2 className="fs-18 text-uppercase text-muted mb-3">{headline}</h2>
-        <h3 className="display-3 mb-8 px-xl-6">{desc}</h3>
+        <h3 className="display-3 mb-8 px-xl-6">{HighlightKeyword(desc?.toString(), "FathSchool")}</h3>
       </div>
     </div>
   );

@@ -36,13 +36,7 @@ export interface ResponseTypeTestimonials {
   updatedAt?: string;
 }
 
-export interface ResponseTypeBlogs extends BaseResponse {
-  data: Blog[];
-}
-
-export interface ResponseTypeBlogDetail extends BaseResponse {
-  data: Blog;
-}
+// -------------------------------------------------- //
 
 export interface Blog {
   id: number;
@@ -56,25 +50,37 @@ export interface Blog {
   published_at: string;
   createdAt?: string;
   updatedAt?: string;
-  blog_author: {
-    id: number;
-    name: string;
-    email: string;
-    photo: string;
-    bio: string;
-    github_handle: string;
-    twitter_handle: string;
-  },
-  blog_category: {
-    id: number;
-    name: string;
-    slug: string;
-    seo_title: string;
-    description: string;
-    is_visible: boolean;
-    createdAt?: string;
-    updatedAt?: string;
-  }
+  blog_author: Author,
+  blog_category: Category
+}
+
+type Author = {
+  id: number;
+  name: string;
+  email: string;
+  photo: string;
+  bio: string;
+  github_handle: string;
+  twitter_handle: string;
+}
+
+type Category = {
+  id: number;
+  name: string;
+  slug: string;
+  seo_title: null;
+  description: null;
+  seo_description: null;
+  is_visible: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+type Tags = {
+  id: number;
+  name: string;
+  slug: string;
+  type: null;
 }
 
 // -------------------------------------------------- //
@@ -92,13 +98,13 @@ export type AppFeature = {
   title: string;
   description: string;
   data: {
-    id?: number | string;
+    id: number | string;
     image: string;
     description: string;
   }[];
 };
 
-type Tutorial = {
+export type Tutorial = {
   title: string;
   description: string;
   device_tutorial: string;
@@ -122,7 +128,7 @@ export type Faq = {
 export type Benefits = {
   title: string;
   description: string;
-  device_benefits: string | StaticImageData;
+  device_benefits: string;
   data: {
     id: number;
     icon: string;
@@ -135,7 +141,7 @@ export type Testimonials = {
   title: string;
   description: string;
   data: {
-    id?: number;
+    id: number;
     name?: string;
     position?: string;
     message?: string;

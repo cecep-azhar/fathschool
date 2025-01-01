@@ -1,19 +1,37 @@
-import { ResponseTypeBlogs } from "@/types/response";
+import { Blog } from "@/types/response";
 import { useQuery } from "react-query";
 import axios from "axios";
 
-export function useGetBlogs() {
-  const { data, error, isError, isLoading, isIdle, status } = useQuery({
-    queryFn: async () => await axios.get<ResponseTypeBlogs>('http://localhost:8000/api/blogs'),
-    queryKey: ['blogs'],
-  })
+export function useGetBlogs(slug?: string) {
+  const url = slug ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs/${slug}` : `${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs`;
+
+  const { data, isLoading, isError, isIdle, isSuccess } = useQuery({
+    queryFn: async () => await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BACKEND_TOKEN}`,
+      }
+    }),
+    queryKey: ["blogs", slug],
+  });
 
   return {
-    dataResponse: data?.data.data,
-    error,
-    isError,
+    response: data?.data,
+    dataResponse: slug ? data?.data.data : data?.data.data,
     isLoading,
+    isError,
     isIdle,
-    status
+    isSuccess
   }
+}
+
+interface ResponseDetailBlog {
+  status: boolean
+  message: string
+  data: Blog
+}
+
+interface ResponseTypeBlogs {
+  status: boolean
+  message: string
+  data: Blog[]
 }

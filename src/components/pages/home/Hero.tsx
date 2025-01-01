@@ -1,14 +1,15 @@
 import Image from "next/image";
-import { ButtonGooglePlay } from "@/components/elements/ButtonGooglePlay";
-import { Polygon } from "@/components/elements/Polygon";
-import { dataDefault, dataHero } from "@/data";
+import { dataDesign } from "@/data";
+import { motion } from "framer-motion";
 import type { Hero } from "@/types/response";
+import { Container } from "@/components/layouts/Container";
+import { GetMediaUrl } from "@/utils/GetMediaUrl";
+import { AnimationList, FadeInDown } from "@/animations";
+import { Polygon, ButtonGooglePlay } from "@/components/elements";
+import { HighlightKeyword } from "@/utils/HighlightKeyword";
 
-export function Hero({ data }: { data: Hero | undefined }): React.ReactNode {
-
-  if (!data) {
-    data = dataDefault.data.sections.data.hero  ;
-  }
+export function Hero({ data }: { data: Hero }): React.ReactNode {
+  const ImageUrl = GetMediaUrl(data.device_image)
 
   return (
     <section id="home" className="wrapper image-wrapper bg-overlay bg-overlay-light-600"
@@ -18,17 +19,13 @@ export function Hero({ data }: { data: Hero | undefined }): React.ReactNode {
         backgroundPosition: "center",
       }}
     >
-      <div className="container pt-16 pt-md-18 pb-9">
+      <Container>
         <div className="row gx-0 gy-10 align-items-center text-center text-lg-start">
-          
-          <div className="col-lg-6 col-xxl-5 position-relative" data-cues="slideInDown" data-group="page-title" data-delay="350">
-
-            {dataHero.designDoodle.map((item, index) => (
+          <div className="col-lg-6 col-xxl-5 position-relative">
+            {dataDesign.hero.map((item, index) => (
               <Image
                 key={index}
                 src={item.src}
-                data-cue={item.dataCue}
-                data-delay={item.dataDelay}
                 style={item.style}
                 className={`${item.style?.height} position-absolute d-none d-lg-block`}
                 alt="svg"
@@ -37,29 +34,50 @@ export function Hero({ data }: { data: Hero | undefined }): React.ReactNode {
               />
             ))}
 
-            <h1 className="display-1 fs-50 mb-4">{data.title}</h1>
-            <p className="lead fs-24 lh-sm mb-7">{data.description}</p>
+            {/* Headline With Animation */}
+            <motion.div
+              variants={AnimationList.listVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1
+                variants={AnimationList.itemVariants}
+                className="display-1 fs-50 mb-4"
+              >
+                {HighlightKeyword(data.title, "FathSchool")}
+              </motion.h1>
+              <motion.p
+                variants={AnimationList.itemVariants}
+                className="lead fs-24 lh-sm mb-7"
+              >
+                {data.description}
+              </motion.p>
 
-            <ButtonGooglePlay href={data.playstore_link} />
+              <motion.div variants={AnimationList.itemVariants}>
+                <ButtonGooglePlay href={data.playstore_link} />
+              </motion.div>
+            </motion.div>
+
           </div>
 
-          <ImageContent data={data.device_image} />
+          {/* Image Content */}
+          <motion.div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" variants={FadeInDown} animate="visible" initial="hidden">
+            <figure>
+              <Image
+                src={ImageUrl}
+                alt="Image"
+                quality={100}
+                width={500}
+                height={500}
+                loading="lazy"
+              />
+            </figure>
+          </motion.div>
+
         </div>
-      </div>
+      </Container>
 
       <Polygon />
     </section>
   );
 }
-
-const ImageContent = ({ data }: { data: string }) => {
-  const ImageUrl = process.env.NEXT_PUBLIC_STORAGE_URL?.concat(data) || dataDefault.data.sections.data.hero.device_image;
-
-  return (
-    <div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" data-cue="fadeIn" data-delay="2000">
-      <figure>
-        <Image src={ImageUrl} alt="Image" quality={100} width={500} height={500} loading="lazy"/>
-      </figure>
-    </div>
-  );
-};

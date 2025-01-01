@@ -4,7 +4,7 @@ import { ResponseTypeFaq, ResponseTypeTestimonials } from "./response";
 export interface TypeBase {
   name?: string;
   headline?: string;
-  desc?: string;
+  desc: string;
 }
 
 export interface TypeDesignDoodle {

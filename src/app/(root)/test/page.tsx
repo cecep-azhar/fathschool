@@ -1,8 +1,11 @@
 "use client";
 
-import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
+import Link from "next/link";
+
 
 export default function Page() {
-  const { dataResponse } = useGetLandingPage();
-  return <pre>{JSON.stringify(dataResponse, null, 2)}</pre>;
+
+  return (
+    <Link href="/">Home</Link>
+  )
 }

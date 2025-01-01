@@ -1,6 +1,6 @@
 import { ButtonShare } from "@/components/elements/ButtonShare";
 import { Tags } from "@/components/elements/Tags";
-import { formatedDate } from "@/utils/formatedDate";
+import { FormatedDate } from "@/utils/FormatedDate";
 import Image from "next/image";
 import Skeleton from "react-loading-skeleton";
 import type { Blog } from "@/types/response";
@@ -29,7 +29,7 @@ function DetailBlog({ data, postsOther, children}: { data: Blog; postsOther?: []
                 </li>
                 <li className="post-date">
                   <i className="uil uil-calendar-alt"></i>
-                  <span>{formatedDate(data.published_at)}</span>
+                  <span>{FormatedDate(data.published_at)}</span>
                 </li>
               </ul>
 

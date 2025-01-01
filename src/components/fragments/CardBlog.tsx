@@ -2,15 +2,15 @@ import Image from "next/image";
 import Blog1 from "@/assets/img/photos/b4.jpg";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
-import { formatedDate } from "@/utils/formatedDate";
 import { Blog } from "@/types/response";
+import { FormatedDate } from "@/utils/FormatedDate";
 
 const CardBlog: React.FC<{ data: Blog } & React.HTMLAttributes<HTMLDivElement>> = ({ data, className }) => {
 
   if (!data) return null;
 
   return (
-    <article className={`col-lg-4 g-6 ${className}`}>
+    <article className={`col-md-6 col-lg-4 g-6 ${className}`}>
       <Header data={data} />
       <Body data={data} />
       <Footer data={data} />
@@ -61,7 +61,7 @@ const Footer: React.FC<{ data: Blog }> = ({ data }) => {
         </li>
         <li className="post-date">
           <i className="uil uil-calendar-alt"></i>
-          <span>{formatedDate(data.published_at)}</span>
+          <span>{FormatedDate(data.published_at)}</span>
         </li>
       </ul>
     </div>

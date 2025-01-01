@@ -1,19 +1,7 @@
 import type { Testimonials } from "@/types/response";
 
-type CardTestimonialProps = {
-  data: Testimonials['data'][0];
-};
-
-export const CardTestimonial: React.FC<CardTestimonialProps> = ({data}) => {
-  const colorCard = [
-    "bg-pale-orange",
-    "bg-pale-red",
-    "bg-pale-blue",
-    "bg-pale-purple",
-    "bg-pale-green",
-    "bg-pale-yellow",
-  ];
-
+export const CardTestimonial: React.FC<{ data: Testimonials["data"][0]}> = ({data}) => {
+  const colorCard = [ "bg-pale-orange", "bg-pale-red", "bg-pale-blue", "bg-pale-purple", "bg-pale-green", "bg-pale-yellow",];
   // Hitung index warna berdasarkan data.id menggunakan modulus
   const colorIndex = (data.id as number)  % colorCard.length; 
 

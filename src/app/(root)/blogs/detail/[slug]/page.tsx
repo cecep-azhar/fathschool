@@ -3,13 +3,13 @@
 import { Breadcrumb, CardBlog } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
 import { DetailBlog, DetailBlogLoader } from "@/components/pages/blog/DetailBlog";
-import { useGetBlog } from "@/hooks/GET/useGetBlog";
+import { useGetBlogs } from "@/hooks/GET/useGetBlogs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function BlogDetail({ params }: { params: Promise<{ slug: string }> }) {
-   const { dataResponse, isLoading } = useGetBlog(React.use(params).slug);
+   const { dataResponse, isLoading } = useGetBlogs(React.use(params).slug);
 
   return (
     <Container>
