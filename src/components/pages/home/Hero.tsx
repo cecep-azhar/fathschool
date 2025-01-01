@@ -11,6 +11,8 @@ import { HighlightKeyword } from "@/utils/HighlightKeyword";
 export function Hero({ data }: { data: Hero }): React.ReactNode {
   const ImageUrl = GetMediaUrl(data.device_image)
 
+  console.log(ImageUrl)
+
   return (
     <section id="home" className="wrapper image-wrapper bg-overlay bg-overlay-light-600"
       style={{

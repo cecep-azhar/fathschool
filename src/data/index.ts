@@ -1,11 +1,4 @@
-import {
-  TypeFeatures,
-  TypeFooter,
-  TypeHero,
-  TypeBenefits,
-  TyperTutorial,
-  TypeTestimonials,
-} from "@/types/data";
+import { TypeFooter } from "@/types/data";
 import {
   doodle1,
   doodle10,
