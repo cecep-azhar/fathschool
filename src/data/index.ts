@@ -620,20 +620,87 @@ export const dataDefault: ResponseLandingPage = {
           button_google_play: "Google Play",
           link_google_play: "#",
         },
-        footer: {
+        main_footer: {
           title: "Bergabung Bersama Kami",
-          description: "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
+          description:
+            "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
           button_title: "Join Us",
-          button_link: "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
+          button_link:
+            "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
           copyright: "Copyright © 2023 FathSchool. All rights reserved.",
           data: [
             {
               id: 1,
               link: "#",
               icon: "uil uil-facebook-f",
+            },
+          ],
+        },
+        footer_section_1: {
+          title: 'Butuh Bantuan?',
+          data: [
+            {
+              id: 1,
+              item: "Support",
+              link: "#",
+            },
+            {
+              id: 2,
+              item: "Syarat dan Ketentuan",
+              link: "#",
+            },
+            {
+              id: 3,
+              item: "Kebijakan Privasi",
+              link: "#",
             }
           ]
         },
+        footer_section_2:{
+          title: 'Pelajari Lebih Lanjut',
+          data: [
+            {
+              id: 1,
+              item: "Tentang Kami",
+              link: "#",
+            },
+            {
+              id: 2,
+              item: "Cerita Kami",
+              link: "#",
+            },
+            {
+              id: 3,
+              item: "Proyek",
+              link: "#",
+            },
+            {
+              id: 4,
+              item: "Fitur",
+              link: "#",
+            }
+          ]
+        },
+        footer_section_3: {
+          title: 'Hubungi Kami',
+          data: [
+            {
+              id: 1,
+              item: "Panjatan RT 03 RW 019 Desa Kecamatan Cileunyi Kabupaten Bandung, Jawa Barat,",
+              link: 'https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce'
+            },
+            {
+              id: 2,
+              item: "hi@fathschool.com",
+              link: 'mailto:hi@fathschool.com'
+            },
+            {
+              id: 3,
+              item: "Phone: +62 851 6172 1727",
+              link: 'https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce'
+            }
+          ]
+        }
       },
     },
   },

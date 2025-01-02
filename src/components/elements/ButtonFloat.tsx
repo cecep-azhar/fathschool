@@ -2,8 +2,7 @@ import { dataFooter } from "@/data";
 
 export const ButtonFloat = ({ NoPhone = dataFooter.columns[2].extra?.phone }: { NoPhone?: string }): React.ReactNode => {
   return (
-    <a
-      href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce`}
+    <a href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce`}
       target="_blank"
       rel="noopener noreferrer"
       style={{

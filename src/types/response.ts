@@ -150,7 +150,7 @@ export type Testimonials = {
   }[];
 };
 
-type SectionsData = {
+export type SectionsData = {
   hero: Hero;
   app_feature: AppFeature;
   tutorial: Tutorial;
@@ -158,8 +158,10 @@ type SectionsData = {
   benefits: Benefits;
   testimonials: Testimonials;
   banner: Banner;
-  footer: MainFooter;
-  // footer_section: footerSection[];
+  main_footer: MainFooter;
+  footer_section_1: footerSection;
+  footer_section_2: footerSection;
+  footer_section_3: footerSection;
 };
 
 export type Banner = {
@@ -189,7 +191,7 @@ export interface footerSection {
     id: number;
     item: string;
     link: string;
-  }
+  }[]
 }
 
 type PageData = {

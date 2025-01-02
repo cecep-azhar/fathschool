@@ -21,7 +21,7 @@ export const SideBar = ({ slug }: { slug: string }) => {
         <ul className="image-list">
           {isLoading && <p>Loading...</p>}
           {!isLoading && filteredBlogs.length === 0 && <p>Data tidak ditemukan</p>}
-          {!isLoading &&filteredBlogs.map((blog: Blog) => (
+          {!isLoading &&filteredBlogs.slice(0, 5).map((blog: Blog) => (
             <li key={blog.id}>
               <figure className="rounded">
                 <Link href={`/blogs/detail/${blog.slug}`}>
