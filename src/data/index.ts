@@ -179,7 +179,7 @@ export const dataDesign = {
         right: "5%",
       },
     },
-  ]
+  ],
 };
 
 // * NAVBAR
@@ -271,11 +271,14 @@ const dataBlogs: Blog[] = [
     id: 1,
     title: "Data Default FathSchool",
     slug: "data-default-fathschool",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    summary:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
     published_at: "2023-05-05",
     seo_title: "Data Default FathSchool",
-    seo_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    seo_description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
     image: "",
     createdAt: "2023-05-05",
     updatedAt: "2023-05-05",
@@ -310,7 +313,8 @@ const dataBlogs: Blog[] = [
     summary: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
     published_at: "2023-06-01",
     seo_title: "Belajar TypeScript",
-    seo_description: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
+    seo_description:
+      "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
     image: "",
     createdAt: "2023-06-01",
     updatedAt: "2023-06-01",
@@ -404,11 +408,15 @@ const dataBlogs: Blog[] = [
     },
     tags: [
       { id: 7, type: null, name: "SEO", slug: "seo" },
-      { id: 8, type: null, name: "Website Optimization", slug: "website-optimization" },
+      {
+        id: 8,
+        type: null,
+        name: "Website Optimization",
+        slug: "website-optimization",
+      },
     ],
   },
 ];
-
 
 export { MenuNavbar, dataFooter, dataBlogs };
 
@@ -493,6 +501,7 @@ export const dataDefault: ResponseLandingPage = {
         },
         faq: {
           video: "/assets/media/Introduce FathSchool.mp4",
+          thumbnail_video: "/assets/media/Introduce FathSchool.png",
           title: "FAQ",
           description:
             "Jika Anda tidak melihat jawaban untuk pertanyaan Anda, Anda dapat mengirim email kepada kami dari formulir kontak kami.",
@@ -602,6 +611,28 @@ export const dataDefault: ResponseLandingPage = {
                 "FathSchool memberikan solusi modern yang membuat pengelolaan sekolah menjadi lebih efisien. Semua data penting tersedia hanya dengan beberapa klik, sehingga saya dapat fokus pada pengembangan sekolah.",
             },
           ],
+        },
+        banner: {
+          headline:
+            "Kelola Pembelajaran, Jadwal, dan Kegiatan Sekolah dalam Satu Platform",
+          description: "FathSchool tersedia untuk diunduh di Google Play Store",
+          image: ImageHero.src,
+          button_google_play: "Google Play",
+          link_google_play: "#",
+        },
+        footer: {
+          title: "Bergabung Bersama Kami",
+          description: "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
+          button_title: "Join Us",
+          button_link: "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
+          copyright: "Copyright © 2023 FathSchool. All rights reserved.",
+          data: [
+            {
+              id: 1,
+              link: "#",
+              icon: "uil uil-facebook-f",
+            }
+          ]
         },
       },
     },

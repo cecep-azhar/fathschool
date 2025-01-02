@@ -3,13 +3,11 @@
 import Image from "next/image";
 import { Poster } from "@/data/images";
 import { AccordionGroup } from "@/components/fragments";
-import type { Faq } from "@/types/response";
 import { dataDesign } from "@/data";
 import { GetMediaUrl } from "@/utils/GetMediaUrl";
+import type { Faq } from "@/types/response";
 
 export function Faq({ data }: { data: Faq }): React.ReactNode {
-  const VideoUrl = GetMediaUrl(data.video);
-
   return (
     <section id="faq" className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content" style={{
         backgroundImage: "url(/assets/img/photos/bg23.png)",
@@ -23,8 +21,8 @@ export function Faq({ data }: { data: Faq }): React.ReactNode {
 
             {/* Content Video */}
             <div className="mt-lg-n20 mt-xl-n22 mb-14 rounded-xl shadow-xl ">
-              <video poster={Poster.src} className="player rounded-xl shadow-xl" playsInline controls preload="none">
-                <source src={VideoUrl} type="video/mp4"/>
+              <video poster={GetMediaUrl(data.thumbnail_video) ?? Poster.src} className="player rounded-xl shadow-xl" playsInline controls preload="none">
+                <source src={GetMediaUrl(data.video)} type="video/mp4"/>
               </video>
             </div>
 

@@ -1,8 +1,11 @@
 import { ButtonGooglePlay } from "@/components/elements";
-import { doodle3, doodle8, ImageHero } from "@/data/images";
+import { doodle3, doodle8 } from "@/data/images";
+import type { Banner } from "@/types/response";
+import { GetMediaUrl } from "@/utils/GetMediaUrl";
+import { HighlightKeyword } from "@/utils/HighlightKeyword";
 import Image from "next/image";
 
-export function Banner(): React.ReactNode {
+export function Banner({ data }: { data: Banner }): React.ReactNode {
   return (
     <section className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600" style={{
       backgroundImage: "url(/assets/img/photos/bg23.png)",
@@ -38,16 +41,14 @@ export function Banner(): React.ReactNode {
               width={300}
               height={300}
             />
-            <h2 className="display-3 mb-4">
-              Kelola Pembelajaran, Jadwal, dan <span className="text-gradient gradient-7"> Kegiatan</span> Sekolah dalam Satu Platform
-            </h2>
-            <p className="lead fs-24 lh-sm mb-7">FathSchool tersedia untuk diunduh di Google Play Store.</p>
-            <ButtonGooglePlay href="https://play.google.com/store/apps/details?id=com.fathschool.fathschool" />
+            <h2 className="display-3 mb-4">{HighlightKeyword(data.headline, "Kegiatan")}</h2>
+            <p className="lead fs-24 lh-sm mb-7">{data.description}</p>
+            <ButtonGooglePlay href={data.link_google_play} />
           </div>
           <div className="col-lg-5 ms-auto mt-lg-n15 mt-xl-n20">
             <figure>
               <Image
-                src={ImageHero.src}
+                src={GetMediaUrl(data.image)}
                 alt="Devices"
                 width={400}
                 height={400}

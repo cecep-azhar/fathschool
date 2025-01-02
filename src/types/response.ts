@@ -120,6 +120,7 @@ export type Faq = {
   video: string;
   title: string;
   description: string;
+  thumbnail_video: string;
   data: {
     question: string;
     answer: string;
@@ -156,7 +157,40 @@ type SectionsData = {
   faq: Faq;
   benefits: Benefits;
   testimonials: Testimonials;
+  banner: Banner;
+  footer: MainFooter;
+  // footer_section: footerSection[];
 };
+
+export type Banner = {
+  headline: string;
+  description: string;
+  button_google_play: string;
+  link_google_play: string;
+  image: string;
+}
+
+export interface MainFooter {
+  title: string;
+  description: string;
+  button_title: string;
+  button_link: string;
+  copyright: string;
+  data: {
+    id: number;
+    link: string;
+    icon: string;
+  }[]
+}
+
+export interface footerSection {
+  title: string;
+  data: {
+    id: number;
+    item: string;
+    link: string;
+  }
+}
 
 type PageData = {
   page_name: string;

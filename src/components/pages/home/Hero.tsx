@@ -9,9 +9,6 @@ import { Polygon, ButtonGooglePlay } from "@/components/elements";
 import { HighlightKeyword } from "@/utils/HighlightKeyword";
 
 export function Hero({ data }: { data: Hero }): React.ReactNode {
-  const ImageUrl = GetMediaUrl(data.device_image)
-
-  console.log(ImageUrl)
 
   return (
     <section id="home" className="wrapper image-wrapper bg-overlay bg-overlay-light-600"
@@ -66,7 +63,7 @@ export function Hero({ data }: { data: Hero }): React.ReactNode {
           <motion.div className="col-lg-6 ms-auto mb-20 mb-xxl-n22" variants={FadeInDown} animate="visible" initial="hidden">
             <figure>
               <Image
-                src={ImageUrl}
+                src={GetMediaUrl(data.device_image)}
                 alt="Image"
                 quality={100}
                 width={500}

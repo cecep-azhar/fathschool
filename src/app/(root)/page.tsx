@@ -8,7 +8,7 @@ export default function Home() {
   const { dataResponse, isLoading, isSuccess } = useGetLandingPage();
 
   // * Destructure data dengan fallback ke default
-  const { hero, app_feature, tutorial, benefits, faq, testimonials } = isSuccess && dataResponse?.sections?.data
+  const { hero, app_feature, tutorial, benefits, faq, testimonials, banner } = isSuccess && dataResponse?.sections?.data
     ? dataResponse.sections.data
     : dataDefault.data.sections.data;
 
@@ -24,7 +24,7 @@ export default function Home() {
       <Faq data={faq}/>
       <Benefits data={benefits} />
       <Testimonial data={testimonials} />
-      <Banner />
+      <Banner data={banner} />
     </>
   );
 }
