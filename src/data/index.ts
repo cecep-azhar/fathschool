@@ -19,7 +19,7 @@ import {
 
 import IconComputer from "@/assets/img/icons/solid/computer.svg";
 import IconCode from "@/assets/img/icons/solid/code.svg";
-import { ResponseLandingPage } from "@/types/response";
+import { Blog, ResponseLandingPage } from "@/types/response";
 
 export const dataDesign = {
   hero: [
@@ -160,6 +160,26 @@ export const dataDesign = {
       },
     },
   ],
+  blogs: [
+    {
+      name: "doodle1",
+      src: doodle1,
+      style: {
+        height: "h-10",
+        top: "-30%",
+        left: "33%",
+      },
+    },
+    {
+      name: "doodle1",
+      src: doodle2,
+      style: {
+        height: "h-14",
+        top: "0%",
+        right: "5%",
+      },
+    },
+  ]
 };
 
 // * NAVBAR
@@ -193,7 +213,7 @@ const dataFooter: TypeFooter = {
   desc: "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
   button: {
     text: "Join Us",
-    link: "#",
+    link: "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
   },
   columns: [
     {
@@ -217,31 +237,21 @@ const dataFooter: TypeFooter = {
       title: "Hubungi Kami",
       items: [
         {
-          name: "Moonshine St. 14/05 Light City, London, United Kingdom",
+          name: "Pajaten RT 03 RW 19 Desa Kecamatan Cileuyi Kabupaten Bandung, Jawa Barat",
           link: "#",
         },
       ],
       extra: {
         email: "hi@FathSchool.com",
-        phone: "0851-6172-1727",
+        phone: "62 851 6172 1727",
       },
     },
   ],
   sosmed: [
     {
-      name: "twitter",
-      link: "https://twitter.com/",
-      icon: "uil uil-twitter",
-    },
-    {
       name: "facebook",
       link: "https://www.facebook.com/",
       icon: "uil uil-facebook-f",
-    },
-    {
-      name: "dribbble",
-      link: "https://dribbble.com/",
-      icon: "uil uil-dribbble",
     },
     {
       name: "instagram",
@@ -250,13 +260,157 @@ const dataFooter: TypeFooter = {
     },
     {
       name: "youtube",
-      link: "https://www.youtube.com/",
+      link: "https://www.youtube.com/@fathforce",
       icon: "uil uil-youtube",
     },
   ],
 };
 
-export { MenuNavbar, dataFooter };
+const dataBlogs: Blog[] = [
+  {
+    id: 1,
+    title: "Data Default FathSchool",
+    slug: "data-default-fathschool",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    published_at: "2023-05-05",
+    seo_title: "Data Default FathSchool",
+    seo_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    image: "",
+    createdAt: "2023-05-05",
+    updatedAt: "2023-05-05",
+    blog_author: {
+      id: 1,
+      name: "Fath School",
+      email: "hi@fathschool.com",
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      photo: "",
+      github_handle: "",
+      twitter_handle: "",
+    },
+    blog_category: {
+      id: 1,
+      name: "DataDefault",
+      slug: "data-default",
+      description: null,
+      is_visible: true,
+      seo_title: null,
+      seo_description: null,
+    },
+    tags: [
+      { id: 1, type: null, name: "DataDefault", slug: "data-default" },
+      { id: 2, type: null, name: "FathSchool", slug: "fathschool" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Belajar TypeScript untuk Pemula",
+    slug: "belajar-typescript-untuk-pemula",
+    content: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
+    summary: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
+    published_at: "2023-06-01",
+    seo_title: "Belajar TypeScript",
+    seo_description: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
+    image: "",
+    createdAt: "2023-06-01",
+    updatedAt: "2023-06-01",
+    blog_author: {
+      id: 1,
+      name: "Fath School",
+      email: "hi@fathschool.com",
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      photo: "",
+      github_handle: "",
+      twitter_handle: "",
+    },
+    blog_category: {
+      id: 2,
+      name: "FathSchool",
+      slug: "fathschool",
+      description: null,
+      is_visible: true,
+      seo_title: null,
+      seo_description: null,
+    },
+    tags: [
+      { id: 3, type: null, name: "TypeScript", slug: "typescript" },
+      { id: 4, type: null, name: "Programming", slug: "programming" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Panduan Deploy Next.js ke Vercel",
+    slug: "panduan-deploy-nextjs-ke-vercel",
+    content: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
+    summary: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
+    published_at: "2023-07-01",
+    seo_title: "Deploy Next.js",
+    seo_description: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
+    image: "",
+    createdAt: "2023-07-01",
+    updatedAt: "2023-07-01",
+    blog_author: {
+      id: 1,
+      name: "Fath School",
+      email: "hi@fathschool.com",
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      photo: "",
+      github_handle: "",
+      twitter_handle: "",
+    },
+    blog_category: {
+      id: 3,
+      name: "FathSchool",
+      slug: "fathschool",
+      description: null,
+      is_visible: true,
+      seo_title: null,
+      seo_description: null,
+    },
+    tags: [
+      { id: 5, type: null, name: "Next.js", slug: "nextjs" },
+      { id: 6, type: null, name: "Vercel", slug: "vercel" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Tips Meningkatkan SEO Website",
+    slug: "tips-meningkatkan-seo-website",
+    content: "Strategi untuk meningkatkan SEO website Anda.",
+    summary: "Strategi untuk meningkatkan SEO website Anda.",
+    published_at: "2023-08-01",
+    seo_title: "Meningkatkan SEO",
+    seo_description: "Strategi untuk meningkatkan SEO website Anda.",
+    image: "",
+    createdAt: "2023-08-01",
+    updatedAt: "2023-08-01",
+    blog_author: {
+      id: 1,
+      name: "Fath School",
+      email: "hi@fathschool.com",
+      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      photo: "",
+      github_handle: "",
+      twitter_handle: "",
+    },
+    blog_category: {
+      id: 4,
+      name: "Information",
+      slug: "information",
+      description: null,
+      is_visible: true,
+      seo_title: null,
+      seo_description: null,
+    },
+    tags: [
+      { id: 7, type: null, name: "SEO", slug: "seo" },
+      { id: 8, type: null, name: "Website Optimization", slug: "website-optimization" },
+    ],
+  },
+];
+
+
+export { MenuNavbar, dataFooter, dataBlogs };
 
 // -------------------------------------------------------------------- //
 

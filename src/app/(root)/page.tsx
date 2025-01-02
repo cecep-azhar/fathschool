@@ -1,6 +1,6 @@
 "use client";
 
-import { Benefits, Faq, Features, Hero, Testimonial, TutorialGuide } from "@/components/pages/Home/index";
+import { Banner, Benefits, Faq, Features, Hero, Testimonial, TutorialGuide } from "@/components/pages/Home/index";
 import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
 import { dataDefault } from "@/data";
 
@@ -24,6 +24,7 @@ export default function Home() {
       <Faq data={faq}/>
       <Benefits data={benefits} />
       <Testimonial data={testimonials} />
+      <Banner />
     </>
   );
 }

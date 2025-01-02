@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Blog1 from "@/assets/img/photos/b4.jpg";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
 import { Blog } from "@/types/response";
 import { FormatedDate } from "@/utils/FormatedDate";
+import { GetMediaUrl } from "@/utils/GetMediaUrl";
 
 const CardBlog: React.FC<{ data: Blog } & React.HTMLAttributes<HTMLDivElement>> = ({ data, className }) => {
-
   if (!data) return null;
 
   return (
@@ -19,10 +18,11 @@ const CardBlog: React.FC<{ data: Blog } & React.HTMLAttributes<HTMLDivElement>> 
 };
 
 const Header: React.FC<{ data: Blog }> = ({ data }) => {
+
   return (
     <figure className="overlay overlay-1 hover-scale rounded mb-5 imageHover-container">
       <Link href={`/blogs/detail/${data.slug}`}>
-        <Image src={Blog1} alt="image" className="image" />
+        <Image src={GetMediaUrl(data.image)} alt="image" className="image" width={400} height={400} />
       </Link>
       <figcaption>
         <h5 className="from-top mb-0">Lihat Selengkapnya</h5>

@@ -6,7 +6,7 @@ import { LogoDark, LogoLight } from "@/data/images";
 import { Hamburger } from "../elements/Hamburger";
 import { dataFooter, MenuNavbar } from "@/data";
 
-export const Navbar: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
+export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ NoPhone = dataFooter.columns[2].extra?.phone }) => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light caret-none">
@@ -26,10 +26,7 @@ export const Navbar: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => 
           <div className="navbar-other w-100 d-flex ms-auto">
             <ul className="navbar-nav flex-row align-items-center ms-auto">
               <li className="nav-item d-none d-md-block">
-                <Link
-                  href="https://wa.me/6285161721727"
-                  className="btn btn-sm btn-primary rounded-pill"
-                >
+                <Link target="_blank" href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforc`} className="btn btn-sm btn-primary rounded-pill">
                   Kontak
                 </Link>
               </li>
@@ -66,8 +63,8 @@ const InformationMobile = () => {
         {dataFooter.columns[2].extra?.email}
       </Link>
       <br />
-      <Link href={`tel:${dataFooter.columns[2].extra?.phone}`} className="link-inverse">
-        {dataFooter.columns[2].extra?.phone}
+      <Link  target="_blank" href={`tel:${dataFooter.columns[2].extra?.phone}`} className="link-inverse">
+        +{dataFooter.columns[2].extra?.phone}
       </Link>
       <nav className="nav social social-white mt-4">
         {dataFooter.sosmed.map((item, index) => (

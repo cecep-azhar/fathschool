@@ -10,7 +10,7 @@ export function useGetLandingPage() {
       }
     }),
     queryKey: ["landing-page"],
-    // enabled: false
+    enabled: false
   });
 
   return {

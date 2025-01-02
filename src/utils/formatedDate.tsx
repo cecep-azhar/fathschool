@@ -6,11 +6,10 @@ moment.locale("id");
 export function FormatedDate(date: string | Date): string {
     const now = moment();
     const inputDate = moment(date);
-
     const diffHours = now.diff(inputDate, "hours");
 
     if (diffHours < 24) {
-        return inputDate.fromNow();
+        return `Hari ini, ${inputDate.fromNow()}`;
     } else if (diffHours < 48) {
         return "Kemarin";
     } else {

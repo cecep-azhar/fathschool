@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { postVisitorData } from "@/hooks/POST/usePostVisitor";
-
 import { Footer, Navbar, Providers } from "@/components/layouts";
+import { ButtonFloat } from '@/components/elements/ButtonFloat';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
   useEffect(() => {
     const trackVisitor = async () => {
       const pageUrl = window.location.href;
@@ -24,12 +25,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     trackVisitor();
   }, []);
+
   return (
     <Providers>
       <section className="content-wrapper">
         <Navbar />
         {children}
         <Footer />
+
+        <ButtonFloat/>
       </section>
     </Providers>
   );

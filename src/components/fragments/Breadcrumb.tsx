@@ -15,7 +15,7 @@ export const Breadcrumb: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = ()
       <ol className="breadcrumb">
 
         <li className="breadcrumb-item">
-          <Link href="/">Home</Link>
+          <Link href="/">Beranda</Link>
         </li>
 
         {/* Generate breadcrumbs */}

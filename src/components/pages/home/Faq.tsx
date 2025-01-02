@@ -23,7 +23,7 @@ export function Faq({ data }: { data: Faq }): React.ReactNode {
 
             {/* Content Video */}
             <div className="mt-lg-n20 mt-xl-n22 mb-14 rounded-xl shadow-xl ">
-              <video poster={Poster.src} className="player rounded-xl shadow-xl" controls autoPlay preload="none">
+              <video poster={Poster.src} className="player rounded-xl shadow-xl" playsInline controls preload="none">
                 <source src={VideoUrl} type="video/mp4"/>
               </video>
             </div>

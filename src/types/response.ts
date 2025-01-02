@@ -50,8 +50,9 @@ export interface Blog {
   published_at: string;
   createdAt?: string;
   updatedAt?: string;
-  blog_author: Author,
-  blog_category: Category
+  blog_author: Author;
+  blog_category: Category;
+  tags: Tags[];
 }
 
 type Author = {

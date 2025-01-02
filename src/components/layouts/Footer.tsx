@@ -20,12 +20,7 @@ export const Footer: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => 
       </footer>
 
       <div className="progress-wrap">
-        <svg
-          className="progress-circle svg-content"
-          width="100%"
-          height="100%"
-          viewBox="-1 -1 102 102"
-        >
+        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
       </div>
@@ -39,7 +34,7 @@ const FooterHeader = ({ data }: { data: typeof dataFooter }) => {
       <div className="widget">
         <h3 className="h2 mb-3 text-white">{data.headline}</h3>
         <p className="lead mb-5">{data.desc}</p>
-        <Link href={data.button.link} className="btn btn-white rounded-pill">
+        <Link target="_blank" href={data.button.link} className="btn btn-white rounded-pill">
           {data.button.text}
         </Link>
       </div>
@@ -68,7 +63,7 @@ const FooterBody = ({ data }: { data: typeof dataFooter }) => {
                     </li>
                     <li key={column.extra.phone}>
                       <Link href={`tel:${column.extra.phone}`}>
-                        {column.extra.phone}
+                        +{column.extra.phone}
                       </Link>
                     </li>
                   </>

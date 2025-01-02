@@ -12,6 +12,7 @@ export function useGetBlogs(slug?: string) {
       }
     }),
     queryKey: ["blogs", slug],
+    // enabled: false
   });
 
   return {
