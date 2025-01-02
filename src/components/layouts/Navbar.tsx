@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { LogoDark, LogoLight } from "@/data/images";
 import { Hamburger } from "../elements/Hamburger";
-import { dataFooter, MenuNavbar } from "@/data";
+import { dataDefault, MenuNavbar } from "@/data";
+import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
 
-export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ NoPhone = dataFooter.columns[2].extra?.phone }) => {
+export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ NoPhone = dataDefault.data.sections.data.footer_section_3.data[2].item }) => {
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light caret-none">
@@ -18,15 +20,13 @@ export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HT
 
             <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
               <Menu data={MenuNavbar} />
-
-              <InformationMobile />
             </div>
           </div>
 
           <div className="navbar-other w-100 d-flex ms-auto">
             <ul className="navbar-nav flex-row align-items-center ms-auto">
               <li className="nav-item d-none d-md-block">
-                <Link target="_blank" href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforc`} className="btn btn-sm btn-primary rounded-pill">
+                <Link target="_blank" href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20FathSchool`} className="btn btn-sm btn-blue rounded-pill">
                   Kontak
                 </Link>
               </li>
@@ -53,27 +53,6 @@ const Menu = ({ data }: { data: typeof MenuNavbar }) => {
         </li>
       ))}
     </ul>
-  );
-};
-
-const InformationMobile = () => {
-  return (
-    <div className="d-lg-none mt-auto pt-6 pb-6 order-4">
-      <Link href={`mailto:${dataFooter.columns[2].extra?.email}`} className="link-inverse">
-        {dataFooter.columns[2].extra?.email}
-      </Link>
-      <br />
-      <Link  target="_blank" href={`tel:${dataFooter.columns[2].extra?.phone}`} className="link-inverse">
-        +{dataFooter.columns[2].extra?.phone}
-      </Link>
-      <nav className="nav social social-white mt-4">
-        {dataFooter.sosmed.map((item, index) => (
-          <Link key={index} href={item.link} target="_blank">
-            <i className={item.icon}></i>
-          </Link>
-        ))}
-      </nav>
-    </div>
   );
 };
 

@@ -13,7 +13,7 @@ import { calculateTotalPages, paginateData } from "@/utils/UtilsBlogs";
 export default function Blogs(): React.ReactNode {
   const { dataResponse, isLoading, isSuccess } = useGetBlogs();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 6;
 
   // Fallback ke data default
   const data = isSuccess && dataResponse?.length > 0 ? dataResponse : dataBlogs;

@@ -12,7 +12,7 @@ export function Banner({ data }: { data: Banner }): React.ReactNode {
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}>
-      <div className="overflow-hidden" style={{ zIndex: 1 }}>
+      <div className="overflow-hidden d-none d-lg-block" style={{ zIndex: 1 }}>
         <div className="divider divider-alt text-light mx-n2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
             <g fill="currentColor">

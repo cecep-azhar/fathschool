@@ -8,8 +8,9 @@ import { GetMediaUrl } from "@/utils/GetMediaUrl";
 import type { Faq } from "@/types/response";
 
 export function Faq({ data }: { data: Faq }): React.ReactNode {
+  
   return (
-    <section id="faq" className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content" style={{
+    <section className="wrapper image-wrapper bg-full bg-image bg-overlay bg-overlay-light-600 bg-content" style={{
         backgroundImage: "url(/assets/img/photos/bg23.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -29,7 +30,6 @@ export function Faq({ data }: { data: Faq }): React.ReactNode {
             <Headline data={data} />
 
             <div className="row">
-              
               <AccordionGroup
                 id="accordion-1"
                 className="col-lg-6 mb-0"
@@ -51,7 +51,7 @@ export function Faq({ data }: { data: Faq }): React.ReactNode {
 
 const Headline = ({ data }: { data: Faq }) => {
   return (
-    <div className="position-relative">
+    <div  id="faq" className="position-relative">
       {dataDesign.faq.map((doodle, index) => (
         <Image
           key={index}

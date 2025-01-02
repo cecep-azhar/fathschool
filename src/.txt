@@ -17,5 +17,6 @@ Url Image
 Tutorial Section - !
 Layouts - !
 
+NAVBARRRR MASI STATIC
 
 ! = Perlu diperbaiki

@@ -1,5 +1,6 @@
 import { TypeFooter } from "@/types/data";
 import {
+  BgDataDefault,
   doodle1,
   doodle10,
   doodle11,
@@ -15,6 +16,7 @@ import {
   ImageBenefits,
   ImageDevice,
   ImageHero,
+  Poster,
 } from "./images";
 
 import IconComputer from "@/assets/img/icons/solid/computer.svg";
@@ -269,24 +271,21 @@ const dataFooter: TypeFooter = {
 const dataBlogs: Blog[] = [
   {
     id: 1,
-    title: "Data Default FathSchool",
-    slug: "data-default-fathschool",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    title: "Apa itu FathSchool?",
+    slug: "apa-itu-fathschool",
+    content: "FathSchool adalah aplikasi berbasis web yang dirancang khusus untuk membantu sekolah dalam mengelola administrasi, akademik, keuangan, hingga komunikasi dengan orang tua. Dengan FathSchool, semua aktivitas pengelolaan sekolah menjadi lebih mudah, terintegrasi, dan efisien.",
+    summary: "FathSchool adalah aplikasi berbasis web yang dirancang khusus untuk membantu sekolah dalam mengelola administrasi, akademik, keuangan, hingga komunikasi dengan orang tua. Dengan FathSchool, semua aktivitas pengelolaan sekolah menjadi lebih mudah, terintegrasi, dan efisien.",
     published_at: "2023-05-05",
-    seo_title: "Data Default FathSchool",
-    seo_description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-    image: "",
+    seo_title: "Lorem ipsum dolor",
+    seo_description: "Lorem ipsum dolor",
+    image: Poster.src,
     createdAt: "2023-05-05",
     updatedAt: "2023-05-05",
     blog_author: {
       id: 1,
       name: "Fath School",
-      email: "hi@fathschool.com",
-      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      email: "hifathforce@fathschool.com",
+      bio: "Lorem ipsum dolor",
       photo: "",
       github_handle: "",
       twitter_handle: "",
@@ -301,120 +300,79 @@ const dataBlogs: Blog[] = [
       seo_description: null,
     },
     tags: [
-      { id: 1, type: null, name: "DataDefault", slug: "data-default" },
-      { id: 2, type: null, name: "FathSchool", slug: "fathschool" },
+      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
     ],
   },
   {
     id: 2,
-    title: "Belajar TypeScript untuk Pemula",
-    slug: "belajar-typescript-untuk-pemula",
-    content: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
-    summary: "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
-    published_at: "2023-06-01",
-    seo_title: "Belajar TypeScript",
-    seo_description:
-      "Panduan lengkap belajar TypeScript dari awal hingga mahir.",
-    image: "",
-    createdAt: "2023-06-01",
-    updatedAt: "2023-06-01",
+    title: "Strategi Manajemen Keuangan yang Efisien untuk Sekolah",
+    slug: "strategi-manajemen-keuangan",
+    content: "Manajemen keuangan yang baik sangat penting dalam dunia pendidikan. Artikel ini membahas langkah-langkah yang dapat diambil oleh pihak sekolah untuk mengelola anggaran dengan lebih baik, mengoptimalkan dana yang ada, dan memanfaatkan teknologi untuk mencatat serta melaporkan transaksi keuangan.",
+    summary: "Mengelola anggaran sekolah dengan cara yang lebih efektif menggunakan teknologi.",
+    published_at: "2023-07-12",
+    seo_title: "Strategi Manajemen Keuangan Sekolah",
+    seo_description: "Cara mengelola anggaran sekolah dengan lebih baik dan efisien.",
+    image: Poster.src,
+    createdAt: "2023-07-12",
+    updatedAt: "2023-07-12",
     blog_author: {
       id: 1,
       name: "Fath School",
-      email: "hi@fathschool.com",
-      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      email: "hifathforce@fathschool.com",
+      bio: "Lorem ipsum dolor",
       photo: "",
       github_handle: "",
       twitter_handle: "",
     },
     blog_category: {
-      id: 2,
-      name: "FathSchool",
-      slug: "fathschool",
+      id: 1,
+      name: "DataDefault",
+      slug: "data-default",
       description: null,
       is_visible: true,
       seo_title: null,
-      seo_description: null,
+      seo_description: null
     },
     tags: [
-      { id: 3, type: null, name: "TypeScript", slug: "typescript" },
-      { id: 4, type: null, name: "Programming", slug: "programming" },
-    ],
+      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
+    ]
   },
   {
     id: 3,
-    title: "Panduan Deploy Next.js ke Vercel",
-    slug: "panduan-deploy-nextjs-ke-vercel",
-    content: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
-    summary: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
-    published_at: "2023-07-01",
-    seo_title: "Deploy Next.js",
-    seo_description: "Cara mudah untuk deploy proyek Next.js ke Vercel.",
-    image: "",
-    createdAt: "2023-07-01",
-    updatedAt: "2023-07-01",
+    title: "Meningkatkan Komunikasi Antara Sekolah dan Orang Tua Siswa",
+    slug: "komunikasi-sekolah-orang-tua",
+    content: "Komunikasi yang baik antara sekolah dan orang tua sangat penting untuk perkembangan siswa. Artikel ini menjelaskan bagaimana sekolah dapat memanfaatkan aplikasi dan platform digital untuk menjaga hubungan yang lebih baik dan lebih transparan dengan orang tua siswa.",
+    summary: "Pentingnya komunikasi yang efektif antara sekolah dan orang tua siswa.",
+    published_at: "2023-09-10",
+    seo_title: "Komunikasi Sekolah Orang Tua",
+    seo_description: "Menjaga hubungan yang lebih baik antara sekolah dan orang tua siswa.",
+    image: Poster.src,
+    createdAt: "2023-09-10",
+    updatedAt: "2023-09-10",
     blog_author: {
       id: 1,
       name: "Fath School",
-      email: "hi@fathschool.com",
-      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      email: "hifathforce@fathschool.com",
+      bio: "Lorem ipsum dolor",
       photo: "",
       github_handle: "",
       twitter_handle: "",
     },
     blog_category: {
-      id: 3,
-      name: "FathSchool",
-      slug: "fathschool",
-      description: null,
-      is_visible: true,
-      seo_title: null,
-      seo_description: null,
+      id : 1,
+      name : "DataDefault",
+      slug : "data-default",
+      description : null,
+      is_visible : true,
+      seo_title : null,
+      seo_description : null
     },
     tags: [
-      { id: 5, type: null, name: "Next.js", slug: "nextjs" },
-      { id: 6, type: null, name: "Vercel", slug: "vercel" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Tips Meningkatkan SEO Website",
-    slug: "tips-meningkatkan-seo-website",
-    content: "Strategi untuk meningkatkan SEO website Anda.",
-    summary: "Strategi untuk meningkatkan SEO website Anda.",
-    published_at: "2023-08-01",
-    seo_title: "Meningkatkan SEO",
-    seo_description: "Strategi untuk meningkatkan SEO website Anda.",
-    image: "",
-    createdAt: "2023-08-01",
-    updatedAt: "2023-08-01",
-    blog_author: {
-      id: 1,
-      name: "Fath School",
-      email: "hi@fathschool.com",
-      bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-      photo: "",
-      github_handle: "",
-      twitter_handle: "",
-    },
-    blog_category: {
-      id: 4,
-      name: "Information",
-      slug: "information",
-      description: null,
-      is_visible: true,
-      seo_title: null,
-      seo_description: null,
-    },
-    tags: [
-      { id: 7, type: null, name: "SEO", slug: "seo" },
-      {
-        id: 8,
-        type: null,
-        name: "Website Optimization",
-        slug: "website-optimization",
-      },
-    ],
+      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
+    ]
   },
 ];
 
@@ -461,11 +419,6 @@ export const dataDefault: ResponseLandingPage = {
               image: IconCalender,
               description: "Laporan Akademik",
             },
-            {
-              id: 5,
-              image: IconCalender,
-              description: "Notifikasi dan Komunikasi",
-            },
           ],
         },
         tutorial: {
@@ -501,10 +454,10 @@ export const dataDefault: ResponseLandingPage = {
         },
         faq: {
           video: "/assets/media/Introduce FathSchool.mp4",
-          thumbnail_video: "/assets/media/Introduce FathSchool.png",
+          thumbnail_video: Poster.src,
           title: "FAQ",
           description:
-            "Jika Anda tidak melihat jawaban untuk pertanyaan Anda, Anda dapat mengirim email kepada kami dari formulir kontak kami.",
+            "Jika Anda Tidak Melihat Jawaban untuk Pertanyaan Anda, Anda dapat Mengirim Email Kepada Kami dari Formulir Kontak Kami.",
           data: [
             {
               question: "Apa itu FathSchool?",
@@ -541,7 +494,7 @@ export const dataDefault: ResponseLandingPage = {
         benefits: {
           title: "Mengapa Fathschool?",
           description:
-            "Berikut ini beberapa alasan mengapa pelanggan kami memilih Fathschool.",
+            "Berikut ini Beberapa Alasan Mengapa Pelanggan Kami Memilih Fathschool.",
           device_benefits: ImageBenefits.src,
           data: [
             {
@@ -610,6 +563,12 @@ export const dataDefault: ResponseLandingPage = {
               message:
                 "FathSchool memberikan solusi modern yang membuat pengelolaan sekolah menjadi lebih efisien. Semua data penting tersedia hanya dengan beberapa klik, sehingga saya dapat fokus pada pengembangan sekolah.",
             },
+            {
+              id: 6,
+              name: "Rizal Maulana",
+              position: "Kepala Sekolah",
+              message: "“Integrasi e-learning dari FathSchool sangat membantu pembelajaran online. Saya bisa mengunggah materi, memberikan tugas, dan mengevaluasi hasil belajar siswa dengan mudah. Teknologi yang benar-benar mendukung pendidikan masa kini!”"
+          }
           ],
         },
         banner: {
@@ -631,8 +590,18 @@ export const dataDefault: ResponseLandingPage = {
           data: [
             {
               id: 1,
-              link: "#",
+              link: "https://www.facebook.com/fathforce",
               icon: "uil uil-facebook-f",
+            },
+            {
+              id: 2,
+              link: "https://www.instagram.com/fathforce_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+              icon: "uil uil-instagram",
+            },
+            {
+              id: 3,
+              link: "https://www.youtube.com/@fathforce",
+              icon: "uil uil-youtube",
             },
           ],
         },
@@ -691,12 +660,12 @@ export const dataDefault: ResponseLandingPage = {
             },
             {
               id: 2,
-              item: "hi@fathschool.com",
-              link: 'mailto:hi@fathschool.com'
+              item: "hi@fathforce.com",
+              link: 'mailto:hi@fathforce.com'
             },
             {
               id: 3,
-              item: "Phone: +62 851 6172 1727",
+              item: "6285161721727",
               link: 'https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce'
             }
           ]

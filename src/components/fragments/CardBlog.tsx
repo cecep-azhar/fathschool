@@ -22,7 +22,7 @@ const Header: React.FC<{ data: Blog }> = ({ data }) => {
   return (
     <figure className="overlay overlay-1 hover-scale rounded mb-5 imageHover-container">
       <Link href={`/blogs/detail/${data.slug}`}>
-        <Image src={GetMediaUrl(data.image)} alt="image" className="image" width={400} height={400} />
+        <Image src={GetMediaUrl(data.image)} alt="image" className="image" quality={100} width={400} height={400} />
       </Link>
       <figcaption>
         <h5 className="from-top mb-0">Lihat Selengkapnya</h5>

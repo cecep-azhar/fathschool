@@ -1,58 +1,66 @@
-'use client';
+"use client";
 
 import { dataBlogs } from "@/data";
 import { useGetBlogs } from "@/hooks/GET/useGetBlogs";
 import { Blog } from "@/types/response";
 import { FormatedDate } from "@/utils/FormatedDate";
-import { GetMediaUrl } from '@/utils/GetMediaUrl';
+import { GetMediaUrl } from "@/utils/GetMediaUrl";
 import Image from "next/image";
 import Link from "next/link";
+import Skeleton from "react-loading-skeleton";
 
 export const SideBar = ({ slug }: { slug: string }) => {
-  const { dataResponse, isLoading, isError, isSuccess } = useGetBlogs();
+  const { dataResponse, isLoading, isSuccess } = useGetBlogs();
   const data = isSuccess && dataResponse?.length > 0 ? dataResponse : dataBlogs;
   const filteredBlogs = data?.filter((item: Blog) => item.slug !== slug) || [];
 
   return (
     <aside className="col-lg-4 sidebar mt-8 mt-lg-0">
       <div className="widget">
-        <h4 className="widget-title mb-3">Blogs Lainnya</h4>
+        <h4 className="widget-title mb-6">Blogs Lainnya</h4>
 
         <ul className="image-list">
-          {isLoading && <p>Loading...</p>}
-          {!isLoading && filteredBlogs.length === 0 && <p>Data tidak ditemukan</p>}
-          {!isLoading &&filteredBlogs.slice(0, 5).map((blog: Blog) => (
-            <li key={blog.id}>
-              <figure className="rounded">
-                <Link href={`/blogs/detail/${blog.slug}`}>
-                  <Image
-                    src={GetMediaUrl(blog.image)}
-                    alt={blog.title}
-                    width={100}
-                    height={100}
-                  />
-                </Link>
-              </figure>
-              <div className="post-content">
-                <h6 className="mb-2">
-                  <Link href={`/blogs/detail/${blog.slug}`} className="link-dark">
-                    {blog.title}
+          {isLoading && [1,2,3,4,5].map(item => <LoaderBlogOther key={item} />)}
+          {!isLoading && filteredBlogs.length === 0 && <p>Tidak ada data lainnya</p>}
+          {!isLoading &&
+            filteredBlogs.slice(0, 6).map((blog: Blog) => (
+              <li key={blog.id}>
+                <figure className="rounded">
+                  <Link href={`/blogs/detail/${blog.slug}`}>
+                    <Image
+                      src={GetMediaUrl(blog.image)}
+                      alt={blog.title}
+                      width={100}
+                      height={100}
+                    />
                   </Link>
-                </h6>
-                <ul className="post-meta">
-                  <li className="post-user">
-                    <i className="uil uil-user"></i>
-                    <span>{blog.blog_author.name}</span>
-                  </li>
-                  <li className="post-date">
-                    <i className="uil uil-calendar-alt"></i>
-                    <span>{FormatedDate(blog.published_at)}</span>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          ))}
+                </figure>
+                <div className="post-content">
+                  <h6 className="mb-2">
+                    <Link
+                      href={`/blogs/detail/${blog.slug}`}
+                      className="link-dark"
+                    >
+                      {blog.title}
+                    </Link>
+                  </h6>
+                  <ul className="post-meta">
+                    <li></li>
+                    <li className="post-user">
+                      <i className="uil uil-user"></i>
+                      <span>{blog.blog_author.name}</span>
+                    </li>
+                    <li className="post-date">
+                      <i className="uil uil-calendar-alt"></i>
+                      <span>{FormatedDate(blog.published_at)}</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            ))}
         </ul>
+
+        <hr className="mt-8" />
 
         {/* <div className="widget mt-8">
           <h4 className="widget-title mb-3">Categories</h4>
@@ -70,5 +78,19 @@ export const SideBar = ({ slug }: { slug: string }) => {
         </div> */}
       </div>
     </aside>
+  );
+};
+
+const LoaderBlogOther = () => {
+  return (
+    <li>
+      <figure className="rounded">
+        <Skeleton width={60} height={60} />
+      </figure>
+      <div className="post-content">
+        <Skeleton height={20} width={200} />
+        <Skeleton height={15} width={100} />
+      </div>
+    </li>
   );
 };

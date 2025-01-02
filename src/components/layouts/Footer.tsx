@@ -3,39 +3,22 @@
 import { Container } from "./Container";
 import Link from "next/link";
 import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
-import {
-  footerSection,
-  MainFooter,
-  ResponseLandingPage,
-  SectionsData,
-} from "@/types/response";
+import { MainFooter, SectionsData} from "@/types/response";
 import { dataDefault } from "@/data";
 
-export const Footer: React.FC<
-  React.HtmlHTMLAttributes<HTMLDivElement>
-> = () => {
-  const { dataResponse, isSuccess } = useGetLandingPage();
-  const dataFooter = dataResponse?.sections.data;
+export const Footer: React.FC<React.HtmlHTMLAttributes<HTMLDivElement>> = () => {
+  const { dataResponse, isSuccess, isLoading } = useGetLandingPage();
+  const dataFooter = (isSuccess && dataResponse?.sections.data) || dataDefault.data.sections.data;
+  const { main_footer } = (isSuccess && dataResponse?.sections.data) || dataDefault.data.sections.data;
 
-  const { main_footer, footer_section_1, footer_section_2, footer_section_3 } =
-    isSuccess && dataResponse?.sections?.data
-      ? dataResponse.sections.data
-      : dataDefault.data.sections.data;
-
-  if (!dataFooter) {
-    return "loading...";
-  }
-
-  console.log(dataResponse?.sections as unknown as ResponseLandingPage);
-
-  // return <pre>{JSON.stringify(dataResponse?.sections.data.main_footer, null, 2)}</pre>
+  if (isLoading) return null;
 
   return (
     <>
       <footer className="bg-dark text-inverse">
         <Container padding="py-13">
           <div className="row gy-6 gy-lg-0">
-            <FooterHeader data={dataFooter.main_footer} />
+            <FooterHeader data={main_footer} />
             <div className="col-lg-2 d-none d-lg-block"></div>
             <FooterBody data={dataFooter} />
           </div>
@@ -118,7 +101,7 @@ const FooterBody = ({ data }: { data: SectionsData }) => {
           <ul className="list-unstyled text-reset mb-0">
             {data.footer_section_3.data.map((item) => (
               <li key={item.id}>
-                <Link href={item.link}>{item.item}</Link>
+                <Link href={item.link} target="_blank">{item.item}</Link>
               </li>
             ))}
           </ul>

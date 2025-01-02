@@ -16,6 +16,8 @@ import LogoLight from "@/assets/img/content/Logo Light.png";
 // BACKGROUND
 import bgFaq from "@/assets/img/photos/bg23.png";
 
+import BgDataDefault from "@/assets/img/photos/a5.jpg";
+
 import IlustrationI5 from "@/assets/img/illustrations/i5.png";
 import Illustration404 from "@/assets/img/illustrations/404@2x.png";
 
@@ -38,7 +40,7 @@ import doodle11 from "@/assets/img/svg/doodle11.svg";
 export {
   IconMoney,
   IconCalender,
-
+  BgDataDefault,
   IlustrationI5,
   Illustration404,
   ImageGooglePlay,
