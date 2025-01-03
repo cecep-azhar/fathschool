@@ -12,7 +12,11 @@ import {
   doodle7,
   doodle8,
   doodle9,
+  IconBadge,
+  IconBox,
   IconCalender,
+  IconCloud,
+  IconTeam,
   ImageBenefits,
   ImageDevice,
   ImageHero,
@@ -499,26 +503,26 @@ export const dataDefault: ResponseLandingPage = {
           data: [
             {
               id: 1,
-              icon: IconComputer,
+              icon: IconCloud,
               title: "Mudah Digunakan",
               description: "Antarmuka ramah pengguna untuk semua pihak.",
             },
             {
               id: 2,
-              icon: IconComputer,
+              icon: IconBadge,
               title: "Aman & Berbasis Cloud",
               description:
                 "Aman & Berbasis Cloud Data sekolah tersimpan dengan aman dan mudah diakses.",
             },
             {
               id: 3,
-              icon: IconComputer,
+              icon: IconBox,
               title: "Terintegrasi",
               description: "Semua kebutuhan sekolah dalam satu aplikasi.",
             },
             {
               id: 4,
-              icon: IconComputer,
+              icon: IconTeam,
               title: "Dukungan Teknis",
               description: "Tim profesional siap membantu Anda kapan saja.",
             },

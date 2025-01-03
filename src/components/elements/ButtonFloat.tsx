@@ -1,8 +1,14 @@
-import { dataFooter } from "@/data";
+'use client';
 
-export const ButtonFloat = ({ NoPhone = dataFooter.columns[2].extra?.phone }: { NoPhone?: string }): React.ReactNode => {
+import { dataDefault } from "@/data";
+import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
+
+export const ButtonFloat = ({ linkNoHp = dataDefault.data.sections.data.footer_section_3.data[2].link }: { linkNoHp?: string }): React.ReactNode => {
+  const { dataResponse, isSuccess, isLoading } = useGetLandingPage()
+  const LinkHpResponse = isSuccess && !isLoading ? dataResponse?.sections.data.footer_section_3.data[2].link : linkNoHp;
+
   return (
-    <a href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce`}
+    <a href={LinkHpResponse}
       target="_blank"
       rel="noopener noreferrer"
       className="d-none d-lg-flex"

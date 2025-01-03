@@ -4,13 +4,13 @@ import axios from "axios";
 
 export function useGetLandingPage() {
   const { data, isLoading, isError, isSuccess } = useQuery({
-    queryFn: async () => await axios.get<ResponseLandingPage>(`https://cms.fathschool.com/api/landing_page`, {
+    queryFn: async () => await axios.get<ResponseLandingPage>(`${process.env.NEXT_PUBLIC_BACKEND_URL}/landing_page`, {
       headers: {
-        Authorization: `Bearer s6xy6SVqt1C547xESgiTwa3lce01AzPbceEMBgO5`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_BACKEND_TOKEN}`,
       }
     }),
     queryKey: ["landing-page"],
-    // enabled: false
+    enabled: false // Ganti Icon Benefits data default
   });
 
   return {

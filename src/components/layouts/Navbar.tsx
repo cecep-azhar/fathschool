@@ -7,7 +7,10 @@ import { Hamburger } from "../elements/Hamburger";
 import { dataDefault, MenuNavbar } from "@/data";
 import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
 
-export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ NoPhone = dataDefault.data.sections.data.footer_section_3.data[2].item }) => {
+export const Navbar = ({ linkNoHp = dataDefault.data.sections.data.footer_section_3.data[2].link }: { linkNoHp?: string }): React.ReactNode => {
+
+  const { dataResponse, isSuccess, isLoading } = useGetLandingPage()
+  const LinkHpResponse = isSuccess && !isLoading ? dataResponse?.sections.data.footer_section_3.data[2].link : linkNoHp;
 
   return (
     <header>
@@ -26,9 +29,9 @@ export const Navbar: React.FC<{ NoPhone?: string } & React.HtmlHTMLAttributes<HT
           <div className="navbar-other w-100 d-flex ms-auto">
             <ul className="navbar-nav flex-row align-items-center ms-auto">
               <li className="nav-item d-none d-md-block">
-                <Link target="_blank" href={`https://api.whatsapp.com/send?phone=${NoPhone}&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20FathSchool`} className="btn btn-sm btn-blue rounded-pill">
+                <a target="_blank" href={LinkHpResponse} className="btn btn-sm btn-blue rounded-pill">
                   Kontak
-                </Link>
+                </a>
               </li>
 
               <li className="nav-item d-lg-none">

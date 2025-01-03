@@ -1,8 +1,12 @@
 import IconComputer from "@/assets/img/icons/solid/computer.svg";
 import IconCode from "@/assets/img/icons/solid/code.svg";
 
+import IconCloud from "@/assets/img/icons/lineal/cloud-computing-2.svg"
 import IconCalender from "@/assets/img/icons/lineal/calendar.svg";
 import IconMoney from "@/assets/img/icons/lineal/money.svg";
+import IconBadge from "@/assets/img/icons/lineal/badge.svg";
+import IconBox from "@/assets/img/icons/lineal/box.svg";
+import IconTeam from "@/assets/img/icons/lineal/team.svg";
 
 // IMAGES CONTENT
 import ImageBenefits from "@/assets/img/content/Benefits.jpg";
@@ -38,6 +42,10 @@ import doodle10 from "@/assets/img/svg/doodle10.svg";
 import doodle11 from "@/assets/img/svg/doodle11.svg";
 
 export {
+  IconBadge,
+  IconBox,
+  IconTeam,
+  IconCloud,
   IconMoney,
   IconCalender,
   BgDataDefault,
