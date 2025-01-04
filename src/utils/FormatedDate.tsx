@@ -6,7 +6,6 @@ moment.locale("id");
 export function FormatedDate(date: string | Date): string {
     const now = moment().startOf("day");
     const inputDate = moment(date).startOf("day");
-
     const diffDays = now.diff(inputDate, "days");
 
     if (diffDays === 0) {

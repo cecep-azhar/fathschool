@@ -8,7 +8,6 @@ import { dataDefault, MenuNavbar } from "@/data";
 import { useGetLandingPage } from "@/hooks/GET/useGetLandingPage";
 
 export const Navbar = ({ linkNoHp = dataDefault.data.sections.data.footer_section_3.data[2].link }: { linkNoHp?: string }): React.ReactNode => {
-
   const { dataResponse, isSuccess, isLoading } = useGetLandingPage()
   const LinkHpResponse = isSuccess && !isLoading ? dataResponse?.sections.data.footer_section_3.data[2].link : linkNoHp;
 

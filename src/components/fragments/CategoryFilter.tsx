@@ -1,15 +1,17 @@
+interface CategoryFilterProps {
+  categories: Array<{ id: string; name: string; }>;
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+}
 
-export const CategoryFilter = ({ categories, onCategoryChange }: { categories: string[], onCategoryChange: (category: string) => void }) => {
+export function CategoryFilter({ categories, selectedCategory, onCategoryChange }: CategoryFilterProps) {
   return (
-    <div>
-      <select onChange={(e) => onCategoryChange(e.target.value)}>
-        <option value="All">All</option>
+      <div className="d-flex flex-wrap gap-2 mt-12">
         {categories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
+          <button className={`${selectedCategory === category.id ? 'btn-blue' : 'btn-soft-blue'} btn rounded-pill`} key={category.id} onClick={() => onCategoryChange(category.id)}>
+            {category.name}
+          </button>
         ))}
-      </select>
-    </div>
+      </div>
   );
-};
+}

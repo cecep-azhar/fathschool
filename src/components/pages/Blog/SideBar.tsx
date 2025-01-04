@@ -1,81 +1,36 @@
 "use client";
 
-import { dataBlogs } from "@/data";
+import { SideBarItem } from "@/components/elements/SideBarItem";
 import { useGetBlogs } from "@/hooks/GET/useGetBlogs";
 import { Blog } from "@/types/response";
-import { FormatedDate } from "@/utils/FormatedDate";
-import { GetMediaUrl } from "@/utils/GetMediaUrl";
-import Image from "next/image";
-import Link from "next/link";
+import { useCategoryCount, useRelatedBlogs } from "@/utils/UtilsBlogs";
 import Skeleton from "react-loading-skeleton";
 
-export const SideBar = ({ slug }: { slug: string }) => {
-  const { dataResponse, isLoading, isSuccess } = useGetBlogs();
-  const data = isSuccess && dataResponse?.length > 0 ? dataResponse : dataBlogs;
-  const filteredBlogs = data?.filter((item: Blog) => item.slug !== slug) || [];
+export function SideBar ({ slug }: { slug: string }): React.ReactNode {
+  const { data: response, isLoading } = useGetBlogs();
+  const blogs = Array.isArray(response?.data) ? response.data : [];
+  const filteredBlogs = useRelatedBlogs(blogs, slug);
+  const categories  = useCategoryCount(response?.data);
+
+  const content = isLoading ? (
+    [1, 2, 3, 4, 5].map((item) => <LoaderBlogOther key={item} />)
+  ) : filteredBlogs.length === 0 ? (
+    <p>Tidak ada data lainnya</p>
+  ) : (filteredBlogs.slice(0, 6).map((item: Blog) => <SideBarItem key={item.id} blog={item} />));
 
   return (
     <aside className="col-lg-4 sidebar mt-8 mt-lg-0">
       <div className="widget">
         <h4 className="widget-title mb-6">Blogs Lainnya</h4>
-
-        <ul className="image-list">
-          {isLoading && [1,2,3,4,5].map(item => <LoaderBlogOther key={item} />)}
-          {!isLoading && filteredBlogs.length === 0 && <p>Tidak ada data lainnya</p>}
-          {!isLoading &&
-            filteredBlogs.slice(0, 6).map((blog: Blog) => (
-              <li key={blog.id}>
-                <figure className="rounded">
-                  <Link href={`/blogs/detail/${blog.slug}`}>
-                    <Image
-                      src={GetMediaUrl(blog.image)}
-                      alt={blog.title}
-                      width={100}
-                      height={100}
-                    />
-                  </Link>
-                </figure>
-                <div className="post-content">
-                  <h6 className="mb-2">
-                    <Link
-                      href={`/blogs/detail/${blog.slug}`}
-                      className="link-dark"
-                    >
-                      {blog.title}
-                    </Link>
-                  </h6>
-                  <ul className="post-meta">
-                    <li></li>
-                    <li className="post-user">
-                      <i className="uil uil-user"></i>
-                      <span>{blog.blog_author.name}</span>
-                    </li>
-                    <li className="post-date">
-                      <i className="uil uil-calendar-alt"></i>
-                      <span>{FormatedDate(blog.published_at)}</span>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            ))}
+        <ul className="image-list">{content}</ul>
+      </div>
+      <div className="widget">
+        <h4 className="widget-title mb-6">Categories</h4>
+        <ul className="unordered-list bullet-primary text-reset">
+          {categories.map((item) => (
+            <li key={item.id}>{item.name} ({item.count})</li>
+          ))}
         </ul>
-
-        <hr className="mt-8" />
-
-        {/* <div className="widget mt-8">
-          <h4 className="widget-title mb-3">Categories</h4>
-          <ul className="unordered-list bullet-primary text-reset">
-            <li>
-              <a href="#">Teamwork (21)</a>
-            </li>
-            <li>
-              <a href="#">Ideas (19)</a>
-            </li>
-            <li>
-              <a href="#">Workspace (16)</a>
-            </li>
-          </ul>
-        </div> */}
       </div>
     </aside>
   );

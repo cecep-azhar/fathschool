@@ -1,16 +1,31 @@
 import axios from "axios";
-import { useQuery } from "react-query";
+import { useMutation } from "react-query";
 
-export const postVisitorData = async (pageUrl: string) => {
-  try {
+
+/**
+ * * Get the IP address of the visitor.
+ *
+ * @returns {Promise<string>} The IP address.
+ */
+const getIPAddress = async (): Promise<string> => {
+  const response = await axios.get(process.env.NEXT_PUBLIC_IPIFY_API || "");
+  return response.data.ip;
+};
+
+/**
+ * * A hook to track visitor data to the server.
+ *
+ * @returns {UseMutationResult} A result object from useMutation
+ */
+export const usePostVisitorData = () => {
+  return useMutation(async (pageUrl: string) => {
     const userAgent = navigator.userAgent;
-    const ipAddress = await getIP();
 
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/track_visitor`,
       {
         page_url: pageUrl,
-        ip_address: ipAddress,
+        ip_address: await getIPAddress(), // Helper function
         user_agent: userAgent,
       },
       {
@@ -22,20 +37,5 @@ export const postVisitorData = async (pageUrl: string) => {
     );
 
     return response.data;
-  } catch (error) {
-    console.error("Error posting visitor data:", error);
-    return null;
-  }
-
-};
-
-
-const getIP = async () => {
-  try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_IPIFY_API}`);
-    return res.data.ip;
-  } catch (error) {
-    console.error("Failed to get IP address:", error);
-    return "Unknown";
-  }
+  });
 };

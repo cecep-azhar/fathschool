@@ -2,10 +2,10 @@ import { BenefitItem, Headline } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
 import { dataDesign } from "@/data";
 import { motion } from "framer-motion";
-import type { Benefits } from "@/types/response";
 import { AnimationList } from "@/animations";
-import Image from "next/image";
 import { GetMediaUrl } from "@/utils/GetMediaUrl";
+import type { Benefits } from "@/types/response";
+import Image from "next/image";
 
 export function Benefits({ data }: { data: Benefits }): React.ReactNode {
   const ImageUrl = GetMediaUrl(data.device_benefits);

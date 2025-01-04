@@ -1,8 +1,10 @@
-import { TypeBase, TypeDesignDoodle } from "@/types/data";
+import { TypeDesignDoodle } from "@/types/data";
 import { HighlightKeyword } from "@/utils/HighlightKeyword";
 import Image from "next/image";
 
-interface Props extends TypeBase {
+interface Props {
+  headline: string;
+  desc: string;
   doodleImages: TypeDesignDoodle[];
 }
 

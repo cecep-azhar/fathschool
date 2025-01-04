@@ -1,4 +1,4 @@
-export const HighlightKeyword = (text: string, keyword: string): React.ReactNode => {
+export function HighlightKeyword (text: string, keyword: string): React.ReactNode {
   const regex = new RegExp(`(${keyword})`, "gi");
   const parts = text.split(regex);
 

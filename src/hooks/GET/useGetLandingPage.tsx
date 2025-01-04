@@ -2,6 +2,11 @@ import { ResponseLandingPage } from "@/types/response";
 import { useQuery } from "react-query";
 import axios from "axios";
 
+/**
+ * * Fetch the landing page data from backend.
+ *
+ * @returns {Object} an object that contains the response, data response, is loading, is error, and is success status
+ */
 export function useGetLandingPage() {
   const { data, isLoading, isError, isSuccess } = useQuery({
     queryFn: async () => await axios.get<ResponseLandingPage>(`${process.env.NEXT_PUBLIC_BACKEND_URL}/landing_page`, {
@@ -10,7 +15,7 @@ export function useGetLandingPage() {
       }
     }),
     queryKey: ["landing-page"],
-    enabled: false // Ganti Icon Benefits data default
+    enabled: false
   });
 
   return {

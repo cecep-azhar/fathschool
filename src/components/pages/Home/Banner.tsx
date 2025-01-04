@@ -47,12 +47,7 @@ export function Banner({ data }: { data: Banner }): React.ReactNode {
           </div>
           <div className="col-lg-5 ms-auto mt-lg-n15 mt-xl-n20">
             <figure>
-              <Image
-                src={GetMediaUrl(data.image)}
-                alt="Devices"
-                width={400}
-                height={400}
-              />
+              <Image src={GetMediaUrl(data.image)} alt="Devices" width={400} height={400}/>
             </figure>
           </div>
         </div>

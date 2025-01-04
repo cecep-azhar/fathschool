@@ -1,190 +1,43 @@
-import { TypeFooter } from "@/types/data";
-import {
-  BgDataDefault,
-  doodle1,
-  doodle10,
-  doodle11,
-  doodle2,
-  doodle3,
-  doodle4,
-  doodle5,
-  doodle6,
-  doodle7,
-  doodle8,
-  doodle9,
-  IconBadge,
-  IconBox,
-  IconCalender,
-  IconCloud,
-  IconTeam,
-  ImageBenefits,
-  ImageDevice,
-  ImageHero,
-  Poster,
-} from "./images";
-
-import IconComputer from "@/assets/img/icons/solid/computer.svg";
-import IconCode from "@/assets/img/icons/solid/code.svg";
+import { TypeDesignDoodle } from "@/types/data";
+import { doodle1, doodle10, doodle11, doodle2, doodle3, doodle4, doodle5, doodle6, doodle7, doodle8, doodle9, IconBadge, IconBox, IconCalender, IconCloud, IconTeam, ImageBenefits, ImageDevice, ImageHero, Poster} from "./images";
 import { Blog, ResponseLandingPage } from "@/types/response";
 
+function createDoodle(name: string, src: string, style: { [key: string]: string }): TypeDesignDoodle {
+  return { name, src, style };
+}
+
+// * DATA DESIGN DOODLE
 export const dataDesign = {
   hero: [
-    {
-      name: "doodle1",
-      src: doodle1,
-      style: {
-        height: "h-10",
-        top: "-10%",
-        left: "-10%",
-      },
-    },
-    {
-      name: "doodle2",
-      src: doodle2,
-      style: {
-        height: "h-14",
-        top: "90%",
-        right: "20%",
-      },
-    },
-    {
-      name: "doodle5",
-      src: doodle5,
-      style: {
-        width: "w-16",
-        height: "h-16",
-        top: "0%",
-        right: "-3%",
-      },
-    },
+    createDoodle("doodle1", doodle1, { height: "h-10", top: "-10%", left: "-10%" }),
+    createDoodle("doodle2", doodle2, { height: "h-14", top: "90%", right: "20%" }),
+    createDoodle("doodle5", doodle5, { width: "w-16", height: "h-16", top: "0%", right: "-3%" }),
   ],
   tutorialGuide: [
-    {
-      name: "doodle8",
-      src: doodle8,
-      style: {
-        top: "-30%",
-        left: "-10%",
-      },
-    },
-    {
-      name: "doodle5",
-      src: doodle5,
-      style: {
-        width: "w-16",
-        height: "h-16",
-        top: "95%",
-        right: "17%",
-      },
-    },
+    createDoodle("doodle8", doodle8, { top: "-30%", left: "-10%" }),
+    createDoodle("doodle5", doodle5, { width: "w-16", height: "h-16", top: "95%", right: "17%" }),
   ],
   faq: [
-    {
-      name: "doodle7",
-      src: doodle7,
-      style: {
-        top: "-80%",
-        right: "-5%",
-      },
-    },
-    {
-      name: "doodle8",
-      src: doodle8,
-      style: {
-        height: "h-13",
-        top: "-20%",
-        left: "-15%",
-      },
-    },
+    createDoodle("doodle7", doodle7, { top: "-80%", right: "-5%" }),
+    createDoodle("doodle8", doodle8, { height: "h-13", top: "-20%", left: "-15%" }),
   ],
   features: [
-    {
-      name: "doodle3",
-      src: doodle3,
-      style: {
-        top: "-30%",
-        left: "5%",
-        height: "h-12",
-      },
-    },
-    {
-      name: "doodle4",
-      src: doodle4,
-      style: {
-        top: "50%",
-        right: "10%",
-        height: "h-10",
-      },
-    },
+    createDoodle("doodle3", doodle3, { top: "-30%", left: "5%", height: "h-12" }),
+    createDoodle("doodle4", doodle4, { top: "50%", right: "10%", height: "h-10" }),
   ],
   testimonial: [
-    {
-      name: "doodle1",
-      src: doodle1,
-      style: {
-        height: "h-10",
-        top: "0%",
-        left: "8%",
-      },
-    },
-    {
-      name: "doodle10",
-      src: doodle10,
-      style: {
-        height: "h-12",
-        top: "-80%",
-        left: "-10%",
-      },
-    },
-    {
-      name: "doodle11",
-      src: doodle11,
-      style: {
-        top: "-40%",
-        right: "-15%",
-      },
-    },
+    createDoodle("doodle1", doodle1, { height: "h-10", top: "0%", left: "8%" }),
+    createDoodle("doodle10", doodle10, { height: "h-12", top: "-80%", left: "-10%" }),
+    createDoodle("doodle11", doodle11, { top: "-40%", right: "-15%" }),
   ],
   benefits: [
-    {
-      name: "doodle3",
-      src: doodle3,
-      style: {
-        width: "w-13",
-        top: "-30%",
-        right: "0%",
-      },
-    },
-    {
-      name: "doodle9",
-      src: doodle9,
-      style: {
-        width: "w-16",
-        height: "h-16",
-        top: "40%",
-        left: "-20%",
-      },
-    },
+    createDoodle("doodle3", doodle3, { width: "w-13", top: "-30%", right: "0%" }),
+    createDoodle("doodle9", doodle9, { width: "w-16", height: "h-16", top: "40%", left: "-20%" }),
   ],
   blogs: [
-    {
-      name: "doodle1",
-      src: doodle1,
-      style: {
-        height: "h-10",
-        top: "-30%",
-        left: "33%",
-      },
-    },
-    {
-      name: "doodle1",
-      src: doodle2,
-      style: {
-        height: "h-14",
-        top: "0%",
-        right: "5%",
-      },
-    },
+    createDoodle("doodle1", doodle1, { height: "h-10", top: "-30%", left: "33%" }),
+    createDoodle("doodle1", doodle2, { height: "h-14", top: "0%", left: "5%" }),
+    createDoodle("doodle5", doodle5, { width: "w-16", height: "h-16", top: "0%", right: "12%" }),
   ],
 };
 
@@ -212,66 +65,7 @@ const MenuNavbar: { name: string; href: string }[] = [
   },
 ];
 
-// * Footer
-const dataFooter: TypeFooter = {
-  name: "Footer",
-  headline: "Bergabung Bersama Kami",
-  desc: "Kelola operasional sekolah lebih efisien dengan aplikasi manajemen sekolah berbasis teknologi. Mudah, cepat, dan terintegrasi.",
-  button: {
-    text: "Join Us",
-    link: "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
-  },
-  columns: [
-    {
-      title: "Butuh Bantuan?",
-      items: [
-        { name: "Support", link: "#" },
-        { name: "Syarat & Ketentuan", link: "#" },
-        { name: "Kebijakan Privasi", link: "#" },
-      ],
-    },
-    {
-      title: "Pelajari lebih lanjut",
-      items: [
-        { name: "Tentang Kami", link: "#" },
-        { name: "Cerita Kami", link: "#" },
-        { name: "Proyek", link: "#" },
-        { name: "Fitur", link: "#" },
-      ],
-    },
-    {
-      title: "Hubungi Kami",
-      items: [
-        {
-          name: "Pajaten RT 03 RW 19 Desa Kecamatan Cileuyi Kabupaten Bandung, Jawa Barat",
-          link: "#",
-        },
-      ],
-      extra: {
-        email: "hi@FathSchool.com",
-        phone: "62 851 6172 1727",
-      },
-    },
-  ],
-  sosmed: [
-    {
-      name: "facebook",
-      link: "https://www.facebook.com/",
-      icon: "uil uil-facebook-f",
-    },
-    {
-      name: "instagram",
-      link: "https://www.instagram.com/",
-      icon: "uil uil-instagram",
-    },
-    {
-      name: "youtube",
-      link: "https://www.youtube.com/@fathforce",
-      icon: "uil uil-youtube",
-    },
-  ],
-};
-
+// * DATA DEFAULT BLOGS
 const dataBlogs: Blog[] = [
   {
     id: 1,
@@ -296,15 +90,15 @@ const dataBlogs: Blog[] = [
     },
     blog_category: {
       id: 1,
-      name: "DataDefault",
-      slug: "data-default",
+      name: "Default",
+      slug: "default",
       description: null,
       is_visible: true,
       seo_title: null,
       seo_description: null,
     },
     tags: [
-      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 1, type: null, name: "#Default", slug: "default" },
       { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
     ],
   },
@@ -331,15 +125,15 @@ const dataBlogs: Blog[] = [
     },
     blog_category: {
       id: 1,
-      name: "DataDefault",
-      slug: "data-default",
+      name: "Default",
+      slug: "default",
       description: null,
       is_visible: true,
       seo_title: null,
       seo_description: null
     },
     tags: [
-      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 1, type: null, name: "#Default", slug: "default" },
       { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
     ]
   },
@@ -366,25 +160,24 @@ const dataBlogs: Blog[] = [
     },
     blog_category: {
       id : 1,
-      name : "DataDefault",
-      slug : "data-default",
+      name : "Default",
+      slug : "default",
       description : null,
       is_visible : true,
       seo_title : null,
       seo_description : null
     },
     tags: [
-      { id: 1, type: null, name: "#DataDefault", slug: "data-default" },
+      { id: 1, type: null, name: "#Default", slug: "default" },
       { id: 2, type: null, name: "#FathSchool", slug: "fathschool" },
     ]
   },
 ];
 
-export { MenuNavbar, dataFooter, dataBlogs };
-
 // -------------------------------------------------------------------- //
 
-export const dataDefault: ResponseLandingPage = {
+// * DEFAULT DATA
+const dataDefault: ResponseLandingPage = {
   status: true,
   message: "Page retrieved successfully.",
   data: {
@@ -678,3 +471,5 @@ export const dataDefault: ResponseLandingPage = {
     },
   },
 };
+
+export { MenuNavbar, dataBlogs, dataDefault };

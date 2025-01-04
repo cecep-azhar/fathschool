@@ -1,6 +1,5 @@
 import IconComputer from "@/assets/img/icons/solid/computer.svg";
 import IconCode from "@/assets/img/icons/solid/code.svg";
-
 import IconCloud from "@/assets/img/icons/lineal/cloud-computing-2.svg"
 import IconCalender from "@/assets/img/icons/lineal/calendar.svg";
 import IconMoney from "@/assets/img/icons/lineal/money.svg";

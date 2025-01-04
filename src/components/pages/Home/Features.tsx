@@ -2,7 +2,7 @@ import { FeatureItem } from "@/components/elements/FeatureItem";
 import { Headline } from "@/components/fragments";
 import { Container } from "@/components/layouts/Container";
 import { dataDesign } from "@/data";
-import { AppFeature } from "@/types/response";
+import type { AppFeature } from "@/types/response";
 
 export function Features({ data }: { data: AppFeature }): React.ReactNode {
 

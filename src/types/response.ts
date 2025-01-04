@@ -38,6 +38,18 @@ export interface ResponseTypeTestimonials {
 
 // -------------------------------------------------- //
 
+export interface ResponseBlogs {
+  status: boolean;
+  message: string;
+  data: Blog[];
+}
+
+export interface ResponseBlogDetail {
+  status: boolean;
+  message: string;
+  data: Blog;
+}
+
 export interface Blog {
   id: number;
   title: string;
