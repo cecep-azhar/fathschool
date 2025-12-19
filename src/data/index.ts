@@ -383,7 +383,7 @@ const dataDefault: ResponseLandingPage = {
           button_title: "Join Us",
           button_link:
             "https://api.whatsapp.com/send?phone=6285161721727&text=Halo%20selamat%20datang%20di%20WhatsApp%20admin%20Fathforce",
-          copyright: "Copyright © 2023 FathSchool. All rights reserved.",
+          copyright: "Copyright © 2026 FathSchool. All rights reserved.",
           data: [
             {
               id: 1,

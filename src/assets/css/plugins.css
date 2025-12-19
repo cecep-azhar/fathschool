@@ -3787,7 +3787,7 @@ print {
   flex-direction: column;
   max-width: 100%;
   margin: auto;
-  //height: 100vh;
+  /* height: 100vh; */
 }
 .glightbox-container .ginner-container.gvideo-container {
   width: 100%;
@@ -4041,7 +4041,7 @@ print {
   display: none !important;
 }
 .glightbox-open {
-  //overflow: hidden;
+  /* overflow: hidden; */
 }
 .gloader {
   height: 25px;
